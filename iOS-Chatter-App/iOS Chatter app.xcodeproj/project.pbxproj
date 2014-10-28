@@ -13,6 +13,11 @@
 		A48ACBEE19FFA4BD00E1D629 /* CameraHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBED19FFA4BD00E1D629 /* CameraHandler.m */; };
 		A48ACBF119FFA5C000E1D629 /* GeoLocationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF019FFA5C000E1D629 /* GeoLocationHandler.m */; };
 		A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF419FFA60D00E1D629 /* ChatMessage.m */; };
+		A48ACBF819FFB6B200E1D629 /* ChatRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF719FFB6B200E1D629 /* ChatRoom.m */; };
+		A48ACBFB19FFB81600E1D629 /* RoomList.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBFA19FFB81600E1D629 /* RoomList.m */; };
+		A48ACBFE19FFB9A900E1D629 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBFD19FFB9A900E1D629 /* Response.m */; };
+		A48ACC0119FFBC6900E1D629 /* LocalData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACC0019FFBC6900E1D629 /* LocalData.m */; };
+		A48ACC0419FFBFB800E1D629 /* ConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACC0319FFBFB800E1D629 /* ConnectionHandler.m */; };
 		A4EB4BBD19FE7B6800F26507 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EB4BBC19FE7B6800F26507 /* Foundation.framework */; };
 		A4EB4BBF19FE7B6800F26507 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EB4BBE19FE7B6800F26507 /* CoreGraphics.framework */; };
 		A4EB4BC119FE7B6800F26507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EB4BC019FE7B6800F26507 /* UIKit.framework */; };
@@ -52,6 +57,16 @@
 		A48ACBF019FFA5C000E1D629 /* GeoLocationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoLocationHandler.m; sourceTree = "<group>"; };
 		A48ACBF319FFA60D00E1D629 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
 		A48ACBF419FFA60D00E1D629 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
+		A48ACBF619FFB6B200E1D629 /* ChatRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoom.h; sourceTree = "<group>"; };
+		A48ACBF719FFB6B200E1D629 /* ChatRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoom.m; sourceTree = "<group>"; };
+		A48ACBF919FFB81600E1D629 /* RoomList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomList.h; sourceTree = "<group>"; };
+		A48ACBFA19FFB81600E1D629 /* RoomList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomList.m; sourceTree = "<group>"; };
+		A48ACBFC19FFB9A900E1D629 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
+		A48ACBFD19FFB9A900E1D629 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
+		A48ACBFF19FFBC6900E1D629 /* LocalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalData.h; sourceTree = "<group>"; };
+		A48ACC0019FFBC6900E1D629 /* LocalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalData.m; sourceTree = "<group>"; };
+		A48ACC0219FFBFB800E1D629 /* ConnectionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionHandler.h; sourceTree = "<group>"; };
+		A48ACC0319FFBFB800E1D629 /* ConnectionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionHandler.m; sourceTree = "<group>"; };
 		A4EB4BB919FE7B6700F26507 /* iOS Chatter app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Chatter app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4EB4BBC19FE7B6800F26507 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4EB4BBE19FE7B6800F26507 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,10 +130,14 @@
 			children = (
 				A48ACBE919FFA44E00E1D629 /* TelerickBackendData.h */,
 				A48ACBEA19FFA44E00E1D629 /* TelerickBackendData.m */,
+				A48ACBFF19FFBC6900E1D629 /* LocalData.h */,
+				A48ACC0019FFBC6900E1D629 /* LocalData.m */,
 				A48ACBEC19FFA4BD00E1D629 /* CameraHandler.h */,
 				A48ACBED19FFA4BD00E1D629 /* CameraHandler.m */,
 				A48ACBEF19FFA5C000E1D629 /* GeoLocationHandler.h */,
 				A48ACBF019FFA5C000E1D629 /* GeoLocationHandler.m */,
+				A48ACC0219FFBFB800E1D629 /* ConnectionHandler.h */,
+				A48ACC0319FFBFB800E1D629 /* ConnectionHandler.m */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -128,6 +147,12 @@
 			children = (
 				A48ACBF319FFA60D00E1D629 /* ChatMessage.h */,
 				A48ACBF419FFA60D00E1D629 /* ChatMessage.m */,
+				A48ACBF619FFB6B200E1D629 /* ChatRoom.h */,
+				A48ACBF719FFB6B200E1D629 /* ChatRoom.m */,
+				A48ACBF919FFB81600E1D629 /* RoomList.h */,
+				A48ACBFA19FFB81600E1D629 /* RoomList.m */,
+				A48ACBFC19FFB9A900E1D629 /* Response.h */,
+				A48ACBFD19FFB9A900E1D629 /* Response.m */,
 			);
 			name = Types;
 			sourceTree = "<group>";
@@ -303,14 +328,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48ACC0419FFBFB800E1D629 /* ConnectionHandler.m in Sources */,
 				A48ACBEE19FFA4BD00E1D629 /* CameraHandler.m in Sources */,
 				A48ACBF119FFA5C000E1D629 /* GeoLocationHandler.m in Sources */,
 				A4EB4BD319FE7B6800F26507 /* RegusterViewController.m in Sources */,
 				A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */,
+				A48ACBFB19FFB81600E1D629 /* RoomList.m in Sources */,
+				A48ACBFE19FFB9A900E1D629 /* Response.m in Sources */,
 				A48ACBEB19FFA44E00E1D629 /* TelerickBackendData.m in Sources */,
 				A4EB4BCD19FE7B6800F26507 /* AppDelegate.m in Sources */,
 				A48ACBE819FF9C2B00E1D629 /* ChatViewController.m in Sources */,
+				A48ACC0119FFBC6900E1D629 /* LocalData.m in Sources */,
 				A4EB4BC919FE7B6800F26507 /* main.m in Sources */,
+				A48ACBF819FFB6B200E1D629 /* ChatRoom.m in Sources */,
 				A48ACBE519FF9A7000E1D629 /* RoomsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

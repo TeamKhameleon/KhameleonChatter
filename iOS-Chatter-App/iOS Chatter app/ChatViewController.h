@@ -5,11 +5,11 @@
 @interface ChatViewController : UIViewController
 
 @property (nonatomic, strong) ChatMessage* currentMessage;
-@property (nonatomic, strong) NSArray* messages;
+@property (nonatomic, strong) ChatRoom* room;
 @property (nonatomic, strong) TelerickBackendData* dataRequester;
 
 -(void)requestUpdate;
--(void)onUpdateRecieved: (NSArray*) messages;
+-(void)onUpdateRecieved: (ChatRoom*) updatedRoom;
 
 -(void)sendMessage;
 

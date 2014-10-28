@@ -1,21 +1,25 @@
 #import <Foundation/Foundation.h>
 #import "ChatMessage.h"
+#import "Response.h"
+#import "RoomList.h"
+#import "ChatRoom.h"
 
 @interface TelerickBackendData : NSObject
 
 -(instancetype) init;
 
--(NSObject*)loginWithMail: (NSString*)email
+-(Response*)loginWithMail: (NSString*)email
          andPassword: (NSString*) password;
 
--(NSObject*)registerWithMail: (NSString*)email
+-(Response*)registerWithMail: (NSString*)email
          andPassword: (NSString*) password;
 
--(NSArray*)getRooms;
+-(BOOL) checkIfRoomsAreSame: (RoomList*) rooms;
+-(RoomList*) getRooms;
 
--(NSArray*)getMessagesInRoom: (NSObject*) room;
+-(ChatRoom*)updateMessagesInRoom: (ChatRoom*) room;
 
--(void)sendMessage: (ChatMessage*) message
-            toRoom: (NSObject*) room;
+-(Response*)sendMessage: (ChatMessage*) message
+                       toRoom: (ChatRoom*) room;
 
 @end

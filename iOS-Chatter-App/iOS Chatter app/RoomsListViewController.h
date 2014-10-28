@@ -7,7 +7,7 @@
 @property (nonatomic, strong) TelerickBackendData* dataRequester;
 
 -(void)requestUpdate;
--(void)onUpdateRecieved: (NSArray*) rooms;
+-(void)onUpdateRecieved: (RoomList*) rooms;
 
 -(void)enterRoom;
 
