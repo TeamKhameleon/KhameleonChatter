@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A48ACBE519FF9A7000E1D629 /* RoomsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBE419FF9A7000E1D629 /* RoomsListViewController.m */; };
 		A48ACBE819FF9C2B00E1D629 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */; };
-		A48ACBEB19FFA44E00E1D629 /* TelerickBackendData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBEA19FFA44E00E1D629 /* TelerickBackendData.m */; };
+		A48ACBEB19FFA44E00E1D629 /* TelerikBackendData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBEA19FFA44E00E1D629 /* TelerikBackendData.m */; };
 		A48ACBEE19FFA4BD00E1D629 /* CameraHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBED19FFA4BD00E1D629 /* CameraHandler.m */; };
 		A48ACBF119FFA5C000E1D629 /* GeoLocationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF019FFA5C000E1D629 /* GeoLocationHandler.m */; };
 		A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF419FFA60D00E1D629 /* ChatMessage.m */; };
@@ -25,13 +24,14 @@
 		A4EB4BC919FE7B6800F26507 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB4BC819FE7B6800F26507 /* main.m */; };
 		A4EB4BCD19FE7B6800F26507 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB4BCC19FE7B6800F26507 /* AppDelegate.m */; };
 		A4EB4BD019FE7B6800F26507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EB4BCE19FE7B6800F26507 /* Main.storyboard */; };
-		A4EB4BD319FE7B6800F26507 /* RegusterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB4BD219FE7B6800F26507 /* RegusterViewController.m */; };
+		A4EB4BD319FE7B6800F26507 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB4BD219FE7B6800F26507 /* RegisterViewController.m */; };
 		A4EB4BD519FE7B6800F26507 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4EB4BD419FE7B6800F26507 /* Images.xcassets */; };
 		A4EB4BDC19FE7B6800F26507 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EB4BDB19FE7B6800F26507 /* XCTest.framework */; };
 		A4EB4BDD19FE7B6800F26507 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EB4BBC19FE7B6800F26507 /* Foundation.framework */; };
 		A4EB4BDE19FE7B6800F26507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EB4BC019FE7B6800F26507 /* UIKit.framework */; };
 		A4EB4BE619FE7B6800F26507 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4EB4BE419FE7B6800F26507 /* InfoPlist.strings */; };
 		A4EB4BE819FE7B6800F26507 /* iOS_Chatter_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB4BE719FE7B6800F26507 /* iOS_Chatter_appTests.m */; };
+		EBEDBD541A0128FA008B2B14 /* RoomsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,12 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A48ACBE319FF9A7000E1D629 /* RoomsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsListViewController.h; sourceTree = "<group>"; };
-		A48ACBE419FF9A7000E1D629 /* RoomsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsListViewController.m; sourceTree = "<group>"; };
 		A48ACBE619FF9C2A00E1D629 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
-		A48ACBE919FFA44E00E1D629 /* TelerickBackendData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelerickBackendData.h; sourceTree = "<group>"; };
-		A48ACBEA19FFA44E00E1D629 /* TelerickBackendData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelerickBackendData.m; sourceTree = "<group>"; };
+		A48ACBE919FFA44E00E1D629 /* TelerikBackendData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelerikBackendData.h; sourceTree = "<group>"; };
+		A48ACBEA19FFA44E00E1D629 /* TelerikBackendData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelerikBackendData.m; sourceTree = "<group>"; };
 		A48ACBEC19FFA4BD00E1D629 /* CameraHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraHandler.h; sourceTree = "<group>"; };
 		A48ACBED19FFA4BD00E1D629 /* CameraHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraHandler.m; sourceTree = "<group>"; };
 		A48ACBEF19FFA5C000E1D629 /* GeoLocationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoLocationHandler.h; sourceTree = "<group>"; };
@@ -78,14 +76,16 @@
 		A4EB4BCB19FE7B6800F26507 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4EB4BCC19FE7B6800F26507 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A4EB4BCF19FE7B6800F26507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A4EB4BD119FE7B6800F26507 /* RegusterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegusterViewController.h; sourceTree = "<group>"; };
-		A4EB4BD219FE7B6800F26507 /* RegusterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegusterViewController.m; sourceTree = "<group>"; };
+		A4EB4BD119FE7B6800F26507 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		A4EB4BD219FE7B6800F26507 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		A4EB4BD419FE7B6800F26507 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A4EB4BDA19FE7B6800F26507 /* iOS Chatter appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Chatter appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4EB4BDB19FE7B6800F26507 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A4EB4BE319FE7B6800F26507 /* iOS Chatter appTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS Chatter appTests-Info.plist"; sourceTree = "<group>"; };
 		A4EB4BE519FE7B6800F26507 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4EB4BE719FE7B6800F26507 /* iOS_Chatter_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_Chatter_appTests.m; sourceTree = "<group>"; };
+		EBEDBD521A0128FA008B2B14 /* RoomsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsListViewController.h; sourceTree = "<group>"; };
+		EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +115,10 @@
 		A48ACBE119FF981B00E1D629 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				A4EB4BD119FE7B6800F26507 /* RegusterViewController.h */,
-				A4EB4BD219FE7B6800F26507 /* RegusterViewController.m */,
-				A48ACBE319FF9A7000E1D629 /* RoomsListViewController.h */,
-				A48ACBE419FF9A7000E1D629 /* RoomsListViewController.m */,
+				EBEDBD521A0128FA008B2B14 /* RoomsListViewController.h */,
+				EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */,
+				A4EB4BD119FE7B6800F26507 /* RegisterViewController.h */,
+				A4EB4BD219FE7B6800F26507 /* RegisterViewController.m */,
 				A48ACBE619FF9C2A00E1D629 /* ChatViewController.h */,
 				A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */,
 			);
@@ -128,8 +128,8 @@
 		A48ACBE219FF997400E1D629 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				A48ACBE919FFA44E00E1D629 /* TelerickBackendData.h */,
-				A48ACBEA19FFA44E00E1D629 /* TelerickBackendData.m */,
+				A48ACBE919FFA44E00E1D629 /* TelerikBackendData.h */,
+				A48ACBEA19FFA44E00E1D629 /* TelerikBackendData.m */,
 				A48ACBFF19FFBC6900E1D629 /* LocalData.h */,
 				A48ACC0019FFBC6900E1D629 /* LocalData.m */,
 				A48ACBEC19FFA4BD00E1D629 /* CameraHandler.h */,
@@ -190,6 +190,7 @@
 		A4EB4BC219FE7B6800F26507 /* iOS Chatter app */ = {
 			isa = PBXGroup;
 			children = (
+				EB7AB1521A01182A00491EC2 /* Views */,
 				A48ACBF219FFA5ED00E1D629 /* Types */,
 				A48ACBE219FF997400E1D629 /* Logic */,
 				A48ACBE119FF981B00E1D629 /* VC */,
@@ -229,6 +230,13 @@
 				A4EB4BE419FE7B6800F26507 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB7AB1521A01182A00491EC2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,17 +339,17 @@
 				A48ACC0419FFBFB800E1D629 /* ConnectionHandler.m in Sources */,
 				A48ACBEE19FFA4BD00E1D629 /* CameraHandler.m in Sources */,
 				A48ACBF119FFA5C000E1D629 /* GeoLocationHandler.m in Sources */,
-				A4EB4BD319FE7B6800F26507 /* RegusterViewController.m in Sources */,
+				EBEDBD541A0128FA008B2B14 /* RoomsListViewController.m in Sources */,
+				A4EB4BD319FE7B6800F26507 /* RegisterViewController.m in Sources */,
 				A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */,
 				A48ACBFB19FFB81600E1D629 /* RoomList.m in Sources */,
 				A48ACBFE19FFB9A900E1D629 /* Response.m in Sources */,
-				A48ACBEB19FFA44E00E1D629 /* TelerickBackendData.m in Sources */,
+				A48ACBEB19FFA44E00E1D629 /* TelerikBackendData.m in Sources */,
 				A4EB4BCD19FE7B6800F26507 /* AppDelegate.m in Sources */,
 				A48ACBE819FF9C2B00E1D629 /* ChatViewController.m in Sources */,
 				A48ACC0119FFBC6900E1D629 /* LocalData.m in Sources */,
 				A4EB4BC919FE7B6800F26507 /* main.m in Sources */,
 				A48ACBF819FFB6B200E1D629 /* ChatRoom.m in Sources */,
-				A48ACBE519FF9A7000E1D629 /* RoomsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

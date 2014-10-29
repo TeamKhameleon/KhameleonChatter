@@ -4,7 +4,7 @@
 #import "RoomList.h"
 #import "ChatRoom.h"
 
-@interface TelerickBackendData : NSObject
+@interface TelerikBackendData : NSObject
 
 -(instancetype) init;
 

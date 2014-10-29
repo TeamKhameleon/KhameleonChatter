@@ -1,10 +1,13 @@
 #import <UIKit/UIKit.h>
-#import "TelerickBackendData.h"
+#import "TelerikBackendData.h"
+#import "LocalData.h"
 
 @interface RoomsListViewController : UIViewController
 
-@property (nonatomic, strong) NSArray* rooms;
-@property (nonatomic, strong) TelerickBackendData* dataRequester;
+@property (nonatomic, strong) RoomList* rooms;
+@property (nonatomic, strong) LocalData* localData;
+@property (nonatomic, strong) TelerikBackendData* dataRequester;
+@property (nonatomic, strong) NSString* username;
 
 -(void)requestUpdate;
 -(void)onUpdateRecieved: (RoomList*) rooms;

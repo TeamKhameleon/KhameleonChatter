@@ -7,6 +7,6 @@
 // we will only store rooms. No messages will be stored. This allows us to have faster loading.
 
 -(RoomList*) getRooms;
--(Response*) updateRooms;
+-(Response*) updateRooms: (RoomList*) rooms;
 
 @end
