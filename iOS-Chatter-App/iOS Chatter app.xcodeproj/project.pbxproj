@@ -12,7 +12,7 @@
 		A48ACBEE19FFA4BD00E1D629 /* CameraHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBED19FFA4BD00E1D629 /* CameraHandler.m */; };
 		A48ACBF119FFA5C000E1D629 /* GeoLocationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF019FFA5C000E1D629 /* GeoLocationHandler.m */; };
 		A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF419FFA60D00E1D629 /* ChatMessage.m */; };
-		A48ACBF819FFB6B200E1D629 /* ChatRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF719FFB6B200E1D629 /* ChatRoom.m */; };
+		A48ACBF819FFB6B200E1D629 /* ChatRooms.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF719FFB6B200E1D629 /* ChatRooms.m */; };
 		A48ACBFB19FFB81600E1D629 /* RoomList.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBFA19FFB81600E1D629 /* RoomList.m */; };
 		A48ACBFE19FFB9A900E1D629 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBFD19FFB9A900E1D629 /* Response.m */; };
 		A48ACC0119FFBC6900E1D629 /* LocalData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACC0019FFBC6900E1D629 /* LocalData.m */; };
@@ -31,6 +31,7 @@
 		A4EB4BDE19FE7B6800F26507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EB4BC019FE7B6800F26507 /* UIKit.framework */; };
 		A4EB4BE619FE7B6800F26507 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4EB4BE419FE7B6800F26507 /* InfoPlist.strings */; };
 		A4EB4BE819FE7B6800F26507 /* iOS_Chatter_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB4BE719FE7B6800F26507 /* iOS_Chatter_appTests.m */; };
+		EBBBE60A1A04F0400069728A /* EverliveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBE6091A04F0400069728A /* EverliveSDK.framework */; };
 		EBEDBD541A0128FA008B2B14 /* RoomsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +56,8 @@
 		A48ACBF019FFA5C000E1D629 /* GeoLocationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoLocationHandler.m; sourceTree = "<group>"; };
 		A48ACBF319FFA60D00E1D629 /* ChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessage.h; sourceTree = "<group>"; };
 		A48ACBF419FFA60D00E1D629 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
-		A48ACBF619FFB6B200E1D629 /* ChatRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoom.h; sourceTree = "<group>"; };
-		A48ACBF719FFB6B200E1D629 /* ChatRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoom.m; sourceTree = "<group>"; };
+		A48ACBF619FFB6B200E1D629 /* ChatRooms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRooms.h; sourceTree = "<group>"; };
+		A48ACBF719FFB6B200E1D629 /* ChatRooms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRooms.m; sourceTree = "<group>"; };
 		A48ACBF919FFB81600E1D629 /* RoomList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomList.h; sourceTree = "<group>"; };
 		A48ACBFA19FFB81600E1D629 /* RoomList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomList.m; sourceTree = "<group>"; };
 		A48ACBFC19FFB9A900E1D629 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		A4EB4BE319FE7B6800F26507 /* iOS Chatter appTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS Chatter appTests-Info.plist"; sourceTree = "<group>"; };
 		A4EB4BE519FE7B6800F26507 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4EB4BE719FE7B6800F26507 /* iOS_Chatter_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_Chatter_appTests.m; sourceTree = "<group>"; };
+		EBBBE6091A04F0400069728A /* EverliveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EverliveSDK.framework; sourceTree = "<group>"; };
 		EBEDBD521A0128FA008B2B14 /* RoomsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsListViewController.h; sourceTree = "<group>"; };
 		EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4EB4BBF19FE7B6800F26507 /* CoreGraphics.framework in Frameworks */,
+				EBBBE60A1A04F0400069728A /* EverliveSDK.framework in Frameworks */,
 				A4EB4BC119FE7B6800F26507 /* UIKit.framework in Frameworks */,
 				A4EB4BBD19FE7B6800F26507 /* Foundation.framework in Frameworks */,
 			);
@@ -147,8 +150,8 @@
 			children = (
 				A48ACBF319FFA60D00E1D629 /* ChatMessage.h */,
 				A48ACBF419FFA60D00E1D629 /* ChatMessage.m */,
-				A48ACBF619FFB6B200E1D629 /* ChatRoom.h */,
-				A48ACBF719FFB6B200E1D629 /* ChatRoom.m */,
+				A48ACBF619FFB6B200E1D629 /* ChatRooms.h */,
+				A48ACBF719FFB6B200E1D629 /* ChatRooms.m */,
 				A48ACBF919FFB81600E1D629 /* RoomList.h */,
 				A48ACBFA19FFB81600E1D629 /* RoomList.m */,
 				A48ACBFC19FFB9A900E1D629 /* Response.h */,
@@ -179,6 +182,7 @@
 		A4EB4BBB19FE7B6800F26507 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBBBE6091A04F0400069728A /* EverliveSDK.framework */,
 				A4EB4BBC19FE7B6800F26507 /* Foundation.framework */,
 				A4EB4BBE19FE7B6800F26507 /* CoreGraphics.framework */,
 				A4EB4BC019FE7B6800F26507 /* UIKit.framework */,
@@ -349,7 +353,7 @@
 				A48ACBE819FF9C2B00E1D629 /* ChatViewController.m in Sources */,
 				A48ACC0119FFBC6900E1D629 /* LocalData.m in Sources */,
 				A4EB4BC919FE7B6800F26507 /* main.m in Sources */,
-				A48ACBF819FFB6B200E1D629 /* ChatRoom.m in Sources */,
+				A48ACBF819FFB6B200E1D629 /* ChatRooms.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +480,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Chatter app/iOS Chatter app-Prefix.pch";
 				INFOPLIST_FILE = "iOS Chatter app/iOS Chatter app-Info.plist";
@@ -489,6 +497,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS Chatter app/iOS Chatter app-Prefix.pch";
 				INFOPLIST_FILE = "iOS Chatter app/iOS Chatter app-Info.plist";

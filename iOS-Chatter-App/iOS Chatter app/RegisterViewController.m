@@ -21,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.dataRequester = [[TelerikBackendData alloc] init];
+    self.dataRequester = [TelerikBackendData sharedInstance];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,42 +36,62 @@
     return NO;
 }
 
+-(void) alert: (NSString*)str
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                    message: str
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
 -(void) loginUser {
-    if ([self inputHasProblems: self.emailTextInput.text] == YES ||
-        [self inputHasProblems: self.passwordTextInput.text] == YES) {
-        // TODO : Display problem
+    if ([self inputHasProblems: self.emailTextInput.text] == YES){
+        [self alert:@"Your email address is too short"];
         return;
     }
-    
-    Response* response = [self.dataRequester loginWithMail:self.emailTextInput.text
-                                               andPassword:self.passwordTextInput.text];
-    if (response.success == YES) {
-        // TODO : Go to Chat Room selection
+    if([self inputHasProblems: self.passwordTextInput.text] == YES) {
+        [self alert:@"Your password is too short"];
+        return;
     }
-    else {
-        // TODO : Display problem
-    }
+    __weak RegisterViewController* weakSelf = self;
+    [self.dataRequester loginWithMail:self.emailTextInput.text password:self.passwordTextInput.text andBlock:^(Response *r) {
+        if (r.success == YES) {
+            NSLog(r);
+            // TODO : Go to Chat Room selection
+        }
+        else {
+            [weakSelf alert:r.message];
+        }
+    }];
 }
 
 -(void) registerUser {
-    if ([self inputHasProblems: self.emailTextInput.text] == YES ||
-        [self inputHasProblems: self.passwordTextInput.text] == YES) {
-        // TODO : Display problem
+    if ([self inputHasProblems: self.emailTextInput.text] == YES){
+        [self alert:@"Your email address is too short"];
+        return;
+    }
+    if([self inputHasProblems: self.passwordTextInput.text] == YES) {
+        [self alert:@"Your password is too short"];
         return;
     }
     
-    Response* response = [self.dataRequester registerWithMail:self.emailTextInput.text
-                                               andPassword:self.passwordTextInput.text];
-    if (response.success == YES) {
-        // TODO : Go to Chat Room selection
-    }
-    else {
-        // TODO : Display problem
-    }
+    __weak RegisterViewController* weakSelf = self;
+    [self.dataRequester registerWithMail:self.emailTextInput.text password:self.passwordTextInput.text andBlock:^(Response *r) {
+        if (r.success == YES) {
+            NSLog(r);
+            // TODO : Go to Chat Room selection
+        }
+        else {
+            [weakSelf alert:r.message];
+        }
+    }];
 }
 
 
 - (IBAction)onQuitButtonClick:(id)sender {
+    exit(0);
 }
 
 - (IBAction)onRegisterButtonClick:(id)sender {
@@ -84,19 +104,19 @@
 
 - (IBAction)onEmailValueChanged:(id)sender {
     if ([self inputHasProblems: self.emailTextInput.text] == YES) {
-        // TODO : change background to red
+        self.emailTextInput.backgroundColor = [UIColor redColor];
     }
     else {
-        // TODO : change background to none
+        self.emailTextInput.backgroundColor = [UIColor clearColor];
     }
 }
 
 - (IBAction)onPasswordValueChanged:(id)sender {
     if ([self inputHasProblems: self.passwordTextInput.text] == YES) {
-        // TODO : change background to red
+        self.passwordTextInput.backgroundColor = [UIColor redColor];
     }
     else {
-        // TODO : change background to none
+        self.passwordTextInput.backgroundColor = [UIColor clearColor];
     }
 }
 

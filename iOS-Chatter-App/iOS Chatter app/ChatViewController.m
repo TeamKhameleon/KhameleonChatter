@@ -17,7 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.dataRequester = [[TelerikBackendData alloc] init];
+    self.locationHandler = [[GeoLocationHandler alloc] init];
+    self.dataRequester = [TelerikBackendData sharedInstance];
     self.currentMessage = [[ChatMessage alloc] initWithTitle: @""
                                                      message: @""
                                                    andSender: self.username];
@@ -28,12 +29,30 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)requestUpdate
+-(void) alert: (NSString*)str
 {
-    // TODO : request the rooms and give "onUpdateRecieved" as callback
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                    message: str
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
--(void)onUpdateRecieved: (ChatRoom*) updatedRoom {
+-(void)requestUpdate
+{
+    __weak ChatViewController * weakSelf = self;
+    [self.dataRequester getUpdatedRoom: self.room withBlock:^(Response *r, ChatRooms *room) {
+        if (r.success) {
+            [weakSelf onUpdateRecieved:room];
+        }
+        else {
+            [weakSelf alert:r.message];
+        }
+    }];
+}
+
+-(void)onUpdateRecieved: (ChatRooms*) updatedRoom {
     // TODO : Update the messages
 }
 
@@ -42,8 +61,12 @@
     self.currentMessage.title = self.messageTitleTextInput.text;
     self.currentMessage.message = self.messageTextInput.text;
     
-    [self.dataRequester sendMessage: self.currentMessage
-                             toRoom: self.room];
+    __weak ChatViewController * weakSelf = self;
+    [self.dataRequester sendMessage:self.currentMessage toRoom:self.room withBlock:^(Response *r) {
+        if (r.success == NO) {
+            [weakSelf alert:r.message];
+        }
+    }];
     
     [self.messageTextInput setText:@""];
     self.currentMessage = [[ChatMessage alloc] initWithTitle: self.messageTitleTextInput.text
@@ -59,7 +82,7 @@
 
 - (IBAction)onAddPhotoButtonClick:(id)sender
 {
-    // TODO : add photo to message
+    [self.currentMessage setPhoto: [self.locationHandler getLocation]];
 }
 
 - (IBAction)onSendButtonClick:(id)sender

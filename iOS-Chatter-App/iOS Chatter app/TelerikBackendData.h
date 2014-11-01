@@ -2,24 +2,32 @@
 #import "ChatMessage.h"
 #import "Response.h"
 #import "RoomList.h"
-#import "ChatRoom.h"
+#import "ChatRooms.h"
 
 @interface TelerikBackendData : NSObject
 
 -(instancetype) init;
 
--(Response*)loginWithMail: (NSString*)email
-         andPassword: (NSString*) password;
++(instancetype) sharedInstance;
 
--(Response*)registerWithMail: (NSString*)email
-         andPassword: (NSString*) password;
+-(void)loginWithMail: (NSString*)email
+      password: (NSString*) password
+      andBlock: (void(^)(Response*r)) block;
 
--(BOOL) checkIfRoomsAreSame: (RoomList*) rooms;
--(RoomList*) getRooms;
+-(void)registerWithMail: (NSString*)email
+         password: (NSString*) password
+         andBlock: (void(^)(Response*r)) block;
 
--(ChatRoom*)updateMessagesInRoom: (ChatRoom*) room;
+-(void) checkIfRoomsAreSame: (RoomList*) oldRooms
+                   withBlock: (void(^)(Response*r,BOOL roomsAreSame, RoomList*updatedRooms)) block;
 
--(Response*)sendMessage: (ChatMessage*) message
-                       toRoom: (ChatRoom*) room;
+-(void) getRoomsWithBlock: (void(^)(Response*r, RoomList*rooms)) block;
+
+-(void)getUpdatedRoom: (ChatRooms*) room
+            withBlock: (void(^)(Response*r, ChatRooms*room)) block;
+
+-(void)sendMessage: (ChatMessage*) message
+            toRoom: (ChatRooms*) room
+         withBlock: (void(^)(Response*r)) block;
 
 @end

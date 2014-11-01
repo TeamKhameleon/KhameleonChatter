@@ -1,7 +1,7 @@
 #import "RoomsListViewController.h"
 #import "TelerikBackendData.h"
 #import "LocalData.h"
-#import "ChatRoom.h"
+#import "ChatRooms.h"
 
 @interface RoomsListViewController ()
 
@@ -15,7 +15,7 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    self.dataRequester = [[TelerikBackendData alloc] init];
+    self.dataRequester = [TelerikBackendData sharedInstance];
     self.localData = [[LocalData alloc] init];
     self.rooms = [self.localData getRooms];
     [self updateRooms];
@@ -27,9 +27,26 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void) alert: (NSString*)str
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                    message: str
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 
 -(void) requestUpdate {
-    // TODO : request the rooms and give "onUpdateRecieved" as callback
+    __weak RoomsListViewController* weakself = self;
+    [self.dataRequester getRoomsWithBlock:^(Response *r, RoomList *rooms) {
+        if (r.success) {
+            [weakself onUpdateRecieved:rooms];
+        }
+        else {
+            [weakself alert:r.message];
+        }
+    }];
 }
 
 -(void) onUpdateRecieved: (RoomList*) rooms {
@@ -40,8 +57,8 @@
     else
     {
         for (int i = 0; i < rooms.count; i++) {
-            ChatRoom* old = self.rooms[i];
-            ChatRoom* new = rooms[i];
+            ChatRooms* old = self.rooms[i];
+            ChatRooms* new = rooms[i];
             if (old.title != new.title) {
                 roomsAreSame = NO;
                 break;
