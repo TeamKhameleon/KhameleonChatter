@@ -6,6 +6,13 @@
 //  Copyright (c) 2014 Siko. All rights reserved.
 //
 
+@interface RoomTableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *Title;
+@property (weak, nonatomic) IBOutlet UITextView *Description;
+
+@end
+
 #import "RoomTableViewCell.h"
 
 @implementation RoomTableViewCell
@@ -18,6 +25,12 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void) setWithTile: (NSString*) title
+      andDescription: (NSString*) description {
+    self.Title.text = title;
+    self.Description.text = description;
 }
 
 @end

@@ -1,5 +1,6 @@
 #import "RegisterViewController.h"
 #import "TelerikBackendData.h"
+#import "RoomsListViewController.h"
 
 @interface RegisterViewController ()
 
@@ -58,8 +59,7 @@
     __weak RegisterViewController* weakSelf = self;
     [self.dataRequester loginWithMail:self.emailTextInput.text password:self.passwordTextInput.text andBlock:^(Response *r) {
         if (r.success == YES) {
-            NSLog(r);
-            // TODO : Go to Chat Room selection
+            [self goToTheRoomsList];
         }
         else {
             [weakSelf alert:r.message];
@@ -80,8 +80,7 @@
     __weak RegisterViewController* weakSelf = self;
     [self.dataRequester registerWithMail:self.emailTextInput.text password:self.passwordTextInput.text andBlock:^(Response *r) {
         if (r.success == YES) {
-            NSLog(r);
-            // TODO : Go to Chat Room selection
+            [self goToTheRoomsList];
         }
         else {
             [weakSelf alert:r.message];
@@ -89,6 +88,10 @@
     }];
 }
 
+-(void)goToTheRoomsList {
+    RoomsListViewController *viewController = [[RoomsListViewController alloc] init];
+    [self presentViewController:viewController animated:YES completion:nil];
+}
 
 - (IBAction)onQuitButtonClick:(id)sender {
     exit(0);

@@ -10,6 +10,29 @@
 
 @implementation MessageCell
 
+-(void) setWithMessage: (ChatMessage*) message
+{
+    NSDateFormatter *formatter;
+    NSString *dateString;
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+    dateString = [formatter stringFromDate: message.date];
+    
+    self.dateLabel.text = dateString;
+    self.usernameLabel.text = message.sender;
+    self.titleLabel.text = message.title;
+    self.messageTextView.text = message.message;
+    
+    if (message.geolocation) {
+        // TODO : Display location properly;
+        NSString *locationText = [NSString stringWithFormat: @"from: %@", @"Sofia"];
+        self.locationLabel.text = locationText;
+    }
+    else {
+        self.locationLabel.text = @"hidden location...";
+    }
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

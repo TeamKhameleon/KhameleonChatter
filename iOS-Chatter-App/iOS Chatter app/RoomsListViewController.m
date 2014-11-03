@@ -2,8 +2,12 @@
 #import "TelerikBackendData.h"
 #import "LocalData.h"
 #import "ChatRooms.h"
+#import "RoomSelectionTableView.h"
+#import "ChatViewController.h"
 
 @interface RoomsListViewController ()
+
+@property (weak, nonatomic) IBOutlet RoomSelectionTableView *roomsTable;
 
 - (IBAction)onLogoutButtonClick:(id)sender;
 - (IBAction)onEnterRoomButtonClick:(id)sender;
@@ -74,17 +78,23 @@
 }
 
 -(void) updateRooms {
-    // TODO : update the rooms of the view
+    self.roomsTable.rooms = self.rooms;
+    [self.roomsTable reloadData];
 }
 
 -(void) enterRoom {
-    // TODO : Determine withch room was selected
-    // TODO : Enter the selected room
+    NSIndexPath *selectedIP = [self.roomsTable indexPathForSelectedRow];
+    ChatRooms *selectedRoom = self.rooms[selectedIP.row];
+
+    
+    ChatViewController *viewController = [[ChatViewController alloc] init];
+    viewController.room = selectedRoom;
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 
 - (IBAction) onLogoutButtonClick:(id)sender {
-    // TODO : go back
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction) onEnterRoomButtonClick:(id)sender {

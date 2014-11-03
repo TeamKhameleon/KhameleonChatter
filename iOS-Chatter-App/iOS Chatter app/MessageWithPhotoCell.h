@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChatMessage.h"
 
-@interface MessageWithPhotoCellTableViewCell : UITableViewCell
+@interface MessageWithPhotoCell : UITableViewCell
+
+-(void) setWithMessage: (ChatMessage*) message;
+
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextView *messageTextView;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end

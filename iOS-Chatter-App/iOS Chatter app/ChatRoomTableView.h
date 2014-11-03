@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChatMessage.h"
 
 @interface ChatRoomTableView : UITableView
+
+@property (nonatomic, strong) NSMutableArray* messages;
 
 @end

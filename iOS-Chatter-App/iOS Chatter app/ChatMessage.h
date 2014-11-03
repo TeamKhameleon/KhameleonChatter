@@ -13,7 +13,7 @@
 @property (nonatomic, strong) NSString* message;
 @property (nonatomic, strong) NSString* sender;
 
-@property (nonatomic, strong) NSObject* photo;
+@property (nonatomic, strong) UIImage* photo;
 @property (nonatomic, strong) NSObject* geolocation;
 
 @property (nonatomic, strong) NSDate* date;

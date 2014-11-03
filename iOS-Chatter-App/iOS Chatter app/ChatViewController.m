@@ -1,10 +1,13 @@
 #import "ChatViewController.h"
+#import "ChatRoomTableView.h"
 
 @interface ChatViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *roomNameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *messageTextInput;
 @property (weak, nonatomic) IBOutlet UITextField *messageTitleTextInput;
+@property (weak, nonatomic) IBOutlet UISwitch *geolocationSwitch;
+@property (weak, nonatomic) IBOutlet ChatRoomTableView *messagesTable;
 
 - (IBAction)onBackButtonClick:(id)sender;
 - (IBAction)onAddPhotoButtonClick:(id)sender;
@@ -53,13 +56,19 @@
 }
 
 -(void)onUpdateRecieved: (ChatRooms*) updatedRoom {
-    // TODO : Update the messages
+    self.room = updatedRoom;
+    self.messagesTable.messages = self.room.messages;
+    [self.messagesTable reloadData];
 }
 
 -(void)sendMessage
 {
     self.currentMessage.title = self.messageTitleTextInput.text;
     self.currentMessage.message = self.messageTextInput.text;
+    
+    if ([self.geolocationSwitch isOn]) {
+        self.currentMessage.geolocation = [self.locationHandler getLocation];
+    }
     
     __weak ChatViewController * weakSelf = self;
     [self.dataRequester sendMessage:self.currentMessage toRoom:self.room withBlock:^(Response *r) {
@@ -77,7 +86,7 @@
 
 - (IBAction)onBackButtonClick:(id)sender
 {
-    // TODO : go back
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)onAddPhotoButtonClick:(id)sender

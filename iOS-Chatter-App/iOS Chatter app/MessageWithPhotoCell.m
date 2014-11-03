@@ -6,9 +6,36 @@
 //  Copyright (c) 2014 Siko. All rights reserved.
 //
 
-#import "MessageWithPhotoCellTableViewCell.h"
+#import "MessageWithPhotoCell.h"
 
-@implementation MessageWithPhotoCellTableViewCell
+@implementation MessageWithPhotoCell
+
+-(void) setWithMessage: (ChatMessage*) message
+{
+    NSDateFormatter *formatter;
+    NSString *dateString;
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+    dateString = [formatter stringFromDate: message.date];
+    
+    self.dateLabel.text = dateString;
+    self.usernameLabel.text = message.sender;
+    self.titleLabel.text = message.title;
+    self.messageTextView.text = message.message;
+    
+    if (message.geolocation) {
+        // TODO : Display location properly;
+        NSString *locationText = [NSString stringWithFormat: @"from: %@", @"Sofia"];
+        self.locationLabel.text = locationText;
+    }
+    else {
+        self.locationLabel.text = @"hidden location...";
+    }
+    
+    if (message.photo) {
+        [self.imageView setImage: message.photo];
+    }
+}
 
 - (void)awakeFromNib {
     // Initialization code

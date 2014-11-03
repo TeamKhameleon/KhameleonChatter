@@ -10,4 +10,8 @@
 
 @interface RoomTableViewCell : UITableViewCell
 
+
+- (void) setWithTile: (NSString*) title
+      andDescription: (NSString*) description;
+
 @end

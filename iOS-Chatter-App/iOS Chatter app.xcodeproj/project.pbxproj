@@ -31,6 +31,14 @@
 		A4EB4BDE19FE7B6800F26507 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EB4BC019FE7B6800F26507 /* UIKit.framework */; };
 		A4EB4BE619FE7B6800F26507 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4EB4BE419FE7B6800F26507 /* InfoPlist.strings */; };
 		A4EB4BE819FE7B6800F26507 /* iOS_Chatter_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB4BE719FE7B6800F26507 /* iOS_Chatter_appTests.m */; };
+		EB4900951A0668DB004A5838 /* RoomSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4900941A0668DB004A5838 /* RoomSelectionTableViewCell.xib */; };
+		EB4900981A066C12004A5838 /* RoomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4900971A066C12004A5838 /* RoomTableViewCell.m */; };
+		EB49009B1A067583004A5838 /* RoomSelectionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB49009A1A067582004A5838 /* RoomSelectionTableView.m */; };
+		EB49009D1A067E64004A5838 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB49009C1A067E64004A5838 /* MessageTableViewCell.xib */; };
+		EB49009F1A0681D6004A5838 /* MessageTableViewCellWithPhoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB49009E1A0681D6004A5838 /* MessageTableViewCellWithPhoto.xib */; };
+		EB4900A21A0682E2004A5838 /* MessageWithPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4900A11A0682E2004A5838 /* MessageWithPhotoCell.m */; };
+		EB4900A51A0683B4004A5838 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4900A41A0683B4004A5838 /* MessageCell.m */; };
+		EB4900A81A068C5C004A5838 /* ChatRoomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4900A71A068C5C004A5838 /* ChatRoomTableView.m */; };
 		EBBBE60A1A04F0400069728A /* EverliveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBE6091A04F0400069728A /* EverliveSDK.framework */; };
 		EBEDBD541A0128FA008B2B14 /* RoomsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */; };
 /* End PBXBuildFile section */
@@ -85,6 +93,19 @@
 		A4EB4BE319FE7B6800F26507 /* iOS Chatter appTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS Chatter appTests-Info.plist"; sourceTree = "<group>"; };
 		A4EB4BE519FE7B6800F26507 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4EB4BE719FE7B6800F26507 /* iOS_Chatter_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_Chatter_appTests.m; sourceTree = "<group>"; };
+		EB4900941A0668DB004A5838 /* RoomSelectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		EB4900961A066C12004A5838 /* RoomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomTableViewCell.h; sourceTree = "<group>"; };
+		EB4900971A066C12004A5838 /* RoomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomTableViewCell.m; sourceTree = "<group>"; };
+		EB4900991A067582004A5838 /* RoomSelectionTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomSelectionTableView.h; sourceTree = "<group>"; };
+		EB49009A1A067582004A5838 /* RoomSelectionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomSelectionTableView.m; sourceTree = "<group>"; };
+		EB49009C1A067E64004A5838 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		EB49009E1A0681D6004A5838 /* MessageTableViewCellWithPhoto.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCellWithPhoto.xib; sourceTree = "<group>"; };
+		EB4900A01A0682E2004A5838 /* MessageWithPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageWithPhotoCell.h; sourceTree = "<group>"; };
+		EB4900A11A0682E2004A5838 /* MessageWithPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageWithPhotoCell.m; sourceTree = "<group>"; };
+		EB4900A31A0683B4004A5838 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		EB4900A41A0683B4004A5838 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		EB4900A61A068C5C004A5838 /* ChatRoomTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomTableView.h; sourceTree = "<group>"; };
+		EB4900A71A068C5C004A5838 /* ChatRoomTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomTableView.m; sourceTree = "<group>"; };
 		EBBBE6091A04F0400069728A /* EverliveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EverliveSDK.framework; sourceTree = "<group>"; };
 		EBEDBD521A0128FA008B2B14 /* RoomsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsListViewController.h; sourceTree = "<group>"; };
 		EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsListViewController.m; sourceTree = "<group>"; };
@@ -118,12 +139,10 @@
 		A48ACBE119FF981B00E1D629 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				EBEDBD521A0128FA008B2B14 /* RoomsListViewController.h */,
-				EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */,
+				EB4900901A066492004A5838 /* ChatRoom */,
+				EB49008F1A066479004A5838 /* RoomSelection */,
 				A4EB4BD119FE7B6800F26507 /* RegisterViewController.h */,
 				A4EB4BD219FE7B6800F26507 /* RegisterViewController.m */,
-				A48ACBE619FF9C2A00E1D629 /* ChatViewController.h */,
-				A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -236,9 +255,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EB49008F1A066479004A5838 /* RoomSelection */ = {
+			isa = PBXGroup;
+			children = (
+				EBEDBD521A0128FA008B2B14 /* RoomsListViewController.h */,
+				EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */,
+				EB4900961A066C12004A5838 /* RoomTableViewCell.h */,
+				EB4900971A066C12004A5838 /* RoomTableViewCell.m */,
+				EB4900991A067582004A5838 /* RoomSelectionTableView.h */,
+				EB49009A1A067582004A5838 /* RoomSelectionTableView.m */,
+			);
+			name = RoomSelection;
+			sourceTree = "<group>";
+		};
+		EB4900901A066492004A5838 /* ChatRoom */ = {
+			isa = PBXGroup;
+			children = (
+				A48ACBE619FF9C2A00E1D629 /* ChatViewController.h */,
+				A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */,
+				EB4900A01A0682E2004A5838 /* MessageWithPhotoCell.h */,
+				EB4900A11A0682E2004A5838 /* MessageWithPhotoCell.m */,
+				EB4900A31A0683B4004A5838 /* MessageCell.h */,
+				EB4900A41A0683B4004A5838 /* MessageCell.m */,
+				EB4900A61A068C5C004A5838 /* ChatRoomTableView.h */,
+				EB4900A71A068C5C004A5838 /* ChatRoomTableView.m */,
+			);
+			name = ChatRoom;
+			sourceTree = "<group>";
+		};
 		EB7AB1521A01182A00491EC2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EB4900941A0668DB004A5838 /* RoomSelectionTableViewCell.xib */,
+				EB49009C1A067E64004A5838 /* MessageTableViewCell.xib */,
+				EB49009E1A0681D6004A5838 /* MessageTableViewCellWithPhoto.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -319,7 +369,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB49009F1A0681D6004A5838 /* MessageTableViewCellWithPhoto.xib in Resources */,
 				A4EB4BD519FE7B6800F26507 /* Images.xcassets in Resources */,
+				EB4900951A0668DB004A5838 /* RoomSelectionTableViewCell.xib in Resources */,
+				EB49009D1A067E64004A5838 /* MessageTableViewCell.xib in Resources */,
 				A4EB4BC719FE7B6800F26507 /* InfoPlist.strings in Resources */,
 				A4EB4BD019FE7B6800F26507 /* Main.storyboard in Resources */,
 			);
@@ -344,6 +397,7 @@
 				A48ACBEE19FFA4BD00E1D629 /* CameraHandler.m in Sources */,
 				A48ACBF119FFA5C000E1D629 /* GeoLocationHandler.m in Sources */,
 				EBEDBD541A0128FA008B2B14 /* RoomsListViewController.m in Sources */,
+				EB4900A21A0682E2004A5838 /* MessageWithPhotoCell.m in Sources */,
 				A4EB4BD319FE7B6800F26507 /* RegisterViewController.m in Sources */,
 				A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */,
 				A48ACBFB19FFB81600E1D629 /* RoomList.m in Sources */,
@@ -354,6 +408,10 @@
 				A48ACC0119FFBC6900E1D629 /* LocalData.m in Sources */,
 				A4EB4BC919FE7B6800F26507 /* main.m in Sources */,
 				A48ACBF819FFB6B200E1D629 /* ChatRooms.m in Sources */,
+				EB4900A51A0683B4004A5838 /* MessageCell.m in Sources */,
+				EB49009B1A067583004A5838 /* RoomSelectionTableView.m in Sources */,
+				EB4900A81A068C5C004A5838 /* ChatRoomTableView.m in Sources */,
+				EB4900981A066C12004A5838 /* RoomTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
