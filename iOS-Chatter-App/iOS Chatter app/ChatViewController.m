@@ -1,7 +1,7 @@
 #import "ChatViewController.h"
 #import "ChatRoomTableView.h"
 
-@interface ChatViewController ()
+@interface ChatViewController () <UITextFieldDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *roomNameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *messageTextInput;
@@ -25,6 +25,20 @@
     self.currentMessage = [[ChatMessage alloc] initWithTitle: @""
                                                      message: @""
                                                    andSender: self.username];
+    self.messageTitleTextInput.delegate = self;
+    self.messageTextInput.delegate = self;
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning

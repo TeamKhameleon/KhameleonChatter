@@ -2,7 +2,7 @@
 #import "TelerikBackendData.h"
 #import "RoomsListViewController.h"
 
-@interface RegisterViewController ()
+@interface RegisterViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *connectionStatus;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextInput;
@@ -23,11 +23,18 @@
 {
     [super viewDidLoad];
     self.dataRequester = [TelerikBackendData sharedInstance];
+    self.emailTextInput.delegate = self;
+    self.passwordTextInput.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 -(BOOL)inputHasProblems: (NSString*) text {
