@@ -2,6 +2,18 @@
 
 @implementation ChatMessage
 
+-(instancetype) initFromDictionarishObject: (PFObject*) message {
+    if (self = [super init]) {
+        self.title = message[@"title"];
+        self.message = message[@"message"];
+        self.sender = message[@"sender"];
+        self.date = message[@"date"];
+        self.photo = message[@"photo"];
+        self.location = message[@"location"];
+    }
+    return self;
+}
+
 -(instancetype) initWithTitle: (NSString*) title
                       message: (NSString*) message
                     andSender: (NSString*) sender {
@@ -14,8 +26,8 @@
     return self;
 }
 
--(void) setGeoLocation: (NSObject*) geolocation {
-    self.geolocation = geolocation;
+-(void) setGeoLocation: (NSString*) location {
+    self.location = location;
 }
 
 -(void) setPhoto: (NSObject*) photo {

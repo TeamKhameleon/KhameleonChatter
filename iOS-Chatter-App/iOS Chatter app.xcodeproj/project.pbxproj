@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A48ACBE819FF9C2B00E1D629 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */; };
-		A48ACBEB19FFA44E00E1D629 /* TelerikBackendData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBEA19FFA44E00E1D629 /* TelerikBackendData.m */; };
+		A48ACBEB19FFA44E00E1D629 /* ServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBEA19FFA44E00E1D629 /* ServerData.m */; };
 		A48ACBEE19FFA4BD00E1D629 /* CameraHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBED19FFA4BD00E1D629 /* CameraHandler.m */; };
 		A48ACBF119FFA5C000E1D629 /* GeoLocationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF019FFA5C000E1D629 /* GeoLocationHandler.m */; };
 		A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF419FFA60D00E1D629 /* ChatMessage.m */; };
@@ -39,7 +39,16 @@
 		EB4900A21A0682E2004A5838 /* MessageWithPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4900A11A0682E2004A5838 /* MessageWithPhotoCell.m */; };
 		EB4900A51A0683B4004A5838 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4900A41A0683B4004A5838 /* MessageCell.m */; };
 		EB4900A81A068C5C004A5838 /* ChatRoomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4900A71A068C5C004A5838 /* ChatRoomTableView.m */; };
-		EBBBE60A1A04F0400069728A /* EverliveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBE6091A04F0400069728A /* EverliveSDK.framework */; };
+		EB6766841A08E117004199F2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6766821A08E117004199F2 /* Bolts.framework */; };
+		EB6766851A08E117004199F2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6766831A08E117004199F2 /* Parse.framework */; };
+		EB6766871A08E294004199F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6766861A08E294004199F2 /* AudioToolbox.framework */; };
+		EB6766891A08E2A2004199F2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6766881A08E2A2004199F2 /* CFNetwork.framework */; };
+		EB67668B1A08E2EB004199F2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB67668A1A08E2EB004199F2 /* MobileCoreServices.framework */; };
+		EB67668D1A08E2FE004199F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB67668C1A08E2FE004199F2 /* QuartzCore.framework */; };
+		EB67668F1A08E309004199F2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB67668E1A08E309004199F2 /* Security.framework */; };
+		EB6766911A08E31A004199F2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6766901A08E31A004199F2 /* StoreKit.framework */; };
+		EB6766931A08E327004199F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6766921A08E327004199F2 /* SystemConfiguration.framework */; };
+		EB6766951A08E356004199F2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6766941A08E356004199F2 /* libz.dylib */; };
 		EBEDBD541A0128FA008B2B14 /* RoomsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +65,8 @@
 /* Begin PBXFileReference section */
 		A48ACBE619FF9C2A00E1D629 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
-		A48ACBE919FFA44E00E1D629 /* TelerikBackendData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelerikBackendData.h; sourceTree = "<group>"; };
-		A48ACBEA19FFA44E00E1D629 /* TelerikBackendData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelerikBackendData.m; sourceTree = "<group>"; };
+		A48ACBE919FFA44E00E1D629 /* ServerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerData.h; sourceTree = "<group>"; };
+		A48ACBEA19FFA44E00E1D629 /* ServerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerData.m; sourceTree = "<group>"; };
 		A48ACBEC19FFA4BD00E1D629 /* CameraHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraHandler.h; sourceTree = "<group>"; };
 		A48ACBED19FFA4BD00E1D629 /* CameraHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraHandler.m; sourceTree = "<group>"; };
 		A48ACBEF19FFA5C000E1D629 /* GeoLocationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoLocationHandler.h; sourceTree = "<group>"; };
@@ -106,7 +115,16 @@
 		EB4900A41A0683B4004A5838 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		EB4900A61A068C5C004A5838 /* ChatRoomTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomTableView.h; sourceTree = "<group>"; };
 		EB4900A71A068C5C004A5838 /* ChatRoomTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomTableView.m; sourceTree = "<group>"; };
-		EBBBE6091A04F0400069728A /* EverliveSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EverliveSDK.framework; sourceTree = "<group>"; };
+		EB6766821A08E117004199F2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		EB6766831A08E117004199F2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		EB6766861A08E294004199F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EB6766881A08E2A2004199F2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EB67668A1A08E2EB004199F2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EB67668C1A08E2FE004199F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EB67668E1A08E309004199F2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EB6766901A08E31A004199F2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EB6766921A08E327004199F2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EB6766941A08E356004199F2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		EBEDBD521A0128FA008B2B14 /* RoomsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsListViewController.h; sourceTree = "<group>"; };
 		EBEDBD531A0128FA008B2B14 /* RoomsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,9 +134,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB6766951A08E356004199F2 /* libz.dylib in Frameworks */,
+				EB6766931A08E327004199F2 /* SystemConfiguration.framework in Frameworks */,
+				EB6766911A08E31A004199F2 /* StoreKit.framework in Frameworks */,
+				EB67668F1A08E309004199F2 /* Security.framework in Frameworks */,
+				EB67668D1A08E2FE004199F2 /* QuartzCore.framework in Frameworks */,
+				EB67668B1A08E2EB004199F2 /* MobileCoreServices.framework in Frameworks */,
+				EB6766891A08E2A2004199F2 /* CFNetwork.framework in Frameworks */,
+				EB6766871A08E294004199F2 /* AudioToolbox.framework in Frameworks */,
+				EB6766841A08E117004199F2 /* Bolts.framework in Frameworks */,
 				A4EB4BBF19FE7B6800F26507 /* CoreGraphics.framework in Frameworks */,
-				EBBBE60A1A04F0400069728A /* EverliveSDK.framework in Frameworks */,
 				A4EB4BC119FE7B6800F26507 /* UIKit.framework in Frameworks */,
+				EB6766851A08E117004199F2 /* Parse.framework in Frameworks */,
 				A4EB4BBD19FE7B6800F26507 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,8 +177,8 @@
 		A48ACBE219FF997400E1D629 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				A48ACBE919FFA44E00E1D629 /* TelerikBackendData.h */,
-				A48ACBEA19FFA44E00E1D629 /* TelerikBackendData.m */,
+				A48ACBE919FFA44E00E1D629 /* ServerData.h */,
+				A48ACBEA19FFA44E00E1D629 /* ServerData.m */,
 				A48ACBFF19FFBC6900E1D629 /* LocalData.h */,
 				A48ACC0019FFBC6900E1D629 /* LocalData.m */,
 				A48ACBEC19FFA4BD00E1D629 /* CameraHandler.h */,
@@ -201,7 +228,16 @@
 		A4EB4BBB19FE7B6800F26507 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EBBBE6091A04F0400069728A /* EverliveSDK.framework */,
+				EB6766941A08E356004199F2 /* libz.dylib */,
+				EB6766921A08E327004199F2 /* SystemConfiguration.framework */,
+				EB6766901A08E31A004199F2 /* StoreKit.framework */,
+				EB67668E1A08E309004199F2 /* Security.framework */,
+				EB67668C1A08E2FE004199F2 /* QuartzCore.framework */,
+				EB67668A1A08E2EB004199F2 /* MobileCoreServices.framework */,
+				EB6766881A08E2A2004199F2 /* CFNetwork.framework */,
+				EB6766861A08E294004199F2 /* AudioToolbox.framework */,
+				EB6766821A08E117004199F2 /* Bolts.framework */,
+				EB6766831A08E117004199F2 /* Parse.framework */,
 				A4EB4BBC19FE7B6800F26507 /* Foundation.framework */,
 				A4EB4BBE19FE7B6800F26507 /* CoreGraphics.framework */,
 				A4EB4BC019FE7B6800F26507 /* UIKit.framework */,
@@ -402,7 +438,7 @@
 				A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */,
 				A48ACBFB19FFB81600E1D629 /* RoomList.m in Sources */,
 				A48ACBFE19FFB9A900E1D629 /* Response.m in Sources */,
-				A48ACBEB19FFA44E00E1D629 /* TelerikBackendData.m in Sources */,
+				A48ACBEB19FFA44E00E1D629 /* ServerData.m in Sources */,
 				A4EB4BCD19FE7B6800F26507 /* AppDelegate.m in Sources */,
 				A48ACBE819FF9C2B00E1D629 /* ChatViewController.m in Sources */,
 				A48ACC0119FFBC6900E1D629 /* LocalData.m in Sources */,

@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
     self.locationHandler = [[GeoLocationHandler alloc] init];
-    self.dataRequester = [TelerikBackendData sharedInstance];
+    self.dataRequester = [ServerData sharedInstance];
     self.currentMessage = [[ChatMessage alloc] initWithTitle: @""
                                                      message: @""
                                                    andSender: self.username];
@@ -81,7 +81,7 @@
     self.currentMessage.message = self.messageTextInput.text;
     
     if ([self.geolocationSwitch isOn]) {
-        self.currentMessage.geolocation = [self.locationHandler getLocation];
+        self.currentMessage.location = [self.locationHandler getLocation];
     }
     
     __weak ChatViewController * weakSelf = self;

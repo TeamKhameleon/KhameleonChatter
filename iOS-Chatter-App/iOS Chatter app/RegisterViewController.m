@@ -1,5 +1,5 @@
 #import "RegisterViewController.h"
-#import "TelerikBackendData.h"
+#import "ServerData.h"
 #import "RoomsListViewController.h"
 
 @interface RegisterViewController () <UITextFieldDelegate>
@@ -22,7 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.dataRequester = [TelerikBackendData sharedInstance];
+    self.dataRequester = [ServerData sharedInstance];
     self.emailTextInput.delegate = self;
     self.passwordTextInput.delegate = self;
 }

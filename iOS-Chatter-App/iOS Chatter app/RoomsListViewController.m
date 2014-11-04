@@ -1,5 +1,5 @@
 #import "RoomsListViewController.h"
-#import "TelerikBackendData.h"
+#import "ServerData.h"
 #import "LocalData.h"
 #import "ChatRooms.h"
 #import "RoomSelectionTableView.h"
@@ -19,7 +19,7 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    self.dataRequester = [TelerikBackendData sharedInstance];
+    self.dataRequester = [ServerData sharedInstance];
     self.localData = [[LocalData alloc] init];
     self.rooms = [self.localData getRooms];
     [self updateRooms];

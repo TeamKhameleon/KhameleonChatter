@@ -1,29 +1,36 @@
-#import "TelerikBackendData.h"
-#import <EverliveSDK/EverliveSDK.h>
+#import "ServerData.h"
+#import "ChatRooms.h"
+#import <Parse/Parse.h>
 
-@interface TelerikBackendData()
+@interface ServerData()
 
-@property (nonatomic, strong) Everlive *everlive;
 @property (nonatomic, strong) NSString *token;
 
 @end
 
-@implementation TelerikBackendData
+@implementation ServerData
 
-TelerikBackendData *instance;
+NSString* usersTableName = @"Users";
+NSString* usersEmailFieldName = @"email";
+NSString* usersNameFieldName = @"name";
+NSString* usersPasswordFieldName = @"password";
+
+NSString* roomsTableName = @"ChatRooms";
+NSString* roomTitleFieldName = @"title";
+NSString* roomDescrFieldName = @"roomDescription";
+NSString* roomMessagesFieldName = @"messages";
+
+ServerData *instance;
 
 -(instancetype) init
 {
-    if (self = [super init]) {
-        self.everlive = [Everlive sharedInstance];
-        [self.everlive setAppKey:@"6OpNT5XmDQWF2t2h"];
-    }
+    self = [super init];
     return self;
 }
 
 +(instancetype) sharedInstance {
     if (!instance) {
-        instance = [[TelerikBackendData alloc] init];
+        instance = [[ServerData alloc] init];
     }
     return instance;
 }
@@ -32,8 +39,7 @@ TelerikBackendData *instance;
 {
     NSInteger index;
     for (index = 0; (index < email.length) && ([email characterAtIndex:index] != '@'); index++)
-    {
-    }
+    { }
     NSString *name = [email substringToIndex: index];
     return name;
 }
@@ -42,43 +48,43 @@ TelerikBackendData *instance;
             password: (NSString*) password
             andBlock: (void(^)(Response*r)) block
 {
-    NSString*name = [TelerikBackendData getNameFromEmail:email];
+    NSString*name = [ServerData getNameFromEmail:email];
+    PFQuery *query = [PFQuery queryWithClassName: usersTableName];
+    [query whereKey:usersEmailFieldName equalTo:email];
+    [query whereKey:usersPasswordFieldName equalTo: password];
     
-    __weak TelerikBackendData *weakself = self;
-    [EVUser loginInWithUsername:name password:password block:^(EVUser *user, NSError *error) {
-        NSString *message;
-        if (error) {
-            message= [NSString stringWithFormat:@"Could not login user. %@", [error localizedDescription]];
-            block([[Response alloc]initWithSuccess:NO andMessage:message]);
-            return;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSString* message = [NSString stringWithFormat:@"User %@ is now logged in" , name];
+            block([[Response alloc]initWithSuccess:YES andMessage:message]);
         }
-        message = [NSString stringWithFormat:@"User %@ is now logged in." , user.username];
-        weakself.token = user.accessToken;
-        block([[Response alloc]initWithSuccess:YES andMessage:message]);
+        else {
+            block([[Response alloc]initWithSuccess:NO andMessage:@"Could not login user."]);
+        }
     }];
+    
 }
 
--(void)registerWithMail: (NSString*)email
+-(void)registerWithMail: (NSString*) email
                password: (NSString*) password
                andBlock: (void(^)(Response*r)) block
 {
-    NSString*name = [TelerikBackendData getNameFromEmail:email];
     
-    EVUser *newUser = [[EVUser alloc]init];
-    [newUser setUsername:name];
-    [newUser setPassword:password];
-    [newUser setDisplayName:name];
-    [newUser setEmail:email];
-    [newUser signUp:^(EVUser *user, NSError *error) {
-        NSString *message;
-        if (error) {
-            message= [NSString stringWithFormat:@"Could not register user. %@", [error localizedDescription]];
-            block([[Response alloc]initWithSuccess:NO andMessage:message]);
-            return;
-        }
-        message = [NSString stringWithFormat:@"User %@ was registered successfuly." , user.username];
+    NSString*name = [ServerData getNameFromEmail:email];
+    
+    PFObject *testObject = [PFObject objectWithClassName: usersTableName];
+    testObject[usersNameFieldName] = name;
+    testObject[usersEmailFieldName] = email;
+    testObject[usersPasswordFieldName] = password;
+    BOOL success = [testObject save];
+    
+    if (success) {
+        NSString* message = [NSString stringWithFormat:@"User %@ is now registered" , name];
         block([[Response alloc]initWithSuccess:YES andMessage:message]);
-    }];
+    }
+    else {
+        block([[Response alloc]initWithSuccess:NO andMessage:@"Could not register user."]);
+    }
 }
 
 -(void) checkIfRoomsAreSame: (RoomList*) oldRooms
@@ -94,8 +100,7 @@ TelerikBackendData *instance;
             for (i=0; i<len; i++) {
                 ChatRooms *r1 = oldRooms[i];
                 ChatRooms *r2 = rooms[i];
-                if (r1.roomId != r2.roomId ||
-                    r1.roomDescription != r2.roomDescription ||
+                if (r1.roomDescription != r2.roomDescription ||
                     r1.title != r2.title) {
                     block(r, NO, rooms);
                     return;
@@ -109,16 +114,22 @@ TelerikBackendData *instance;
 
 -(void) getRoomsWithBlock: (void(^)(Response*r, RoomList*rooms)) block
 {
-    EVDataStore *dataStore = [EVDataStore sharedInstance];
-    [dataStore fetchAll:[ChatRooms class] block:^(NSArray *result, NSError *error) {
-        Response*r;
+    PFQuery *query = [PFQuery queryWithClassName: roomsTableName];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {        Response*r;
         if (error) {
             r= [[Response alloc] initWithSuccess:NO andMessage: [error localizedDescription]];
         }
         else {
             r = [[Response alloc]initWithSuccess:YES andMessage:@"Rooms were successfuly accuired."];
         }
-        RoomList* rooms = [[RoomList alloc] initWithArray:result];
+        RoomList* rooms = [[RoomList alloc] init];
+        
+        for (PFObject *object in objects) {
+            ChatRooms*room = [[ChatRooms alloc] initWithTitle: object[roomTitleFieldName]
+                                                    andRoomDescr: object[roomDescrFieldName]];
+            [rooms addObject: room];
+        }
         block(r, rooms);
     }];
 }
@@ -126,18 +137,28 @@ TelerikBackendData *instance;
 -(void)getUpdatedRoom: (ChatRooms*) room
             withBlock: (void(^)(Response*r, ChatRooms*room)) block
 {
-    EVDataStore *dataStore = [EVDataStore sharedInstance];
-    [dataStore fetch:[ChatRooms class] uniqueId:room.roomId block:^(NSArray *result, NSError *error) {
+    
+    PFQuery *query = [PFQuery queryWithClassName: roomsTableName];
+    [query whereKey:roomTitleFieldName equalTo:room.title];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         Response*r;
         if (error) {
             r= [[Response alloc] initWithSuccess:NO andMessage: [error localizedDescription]];
         }
         else {
             r = [[Response alloc]initWithSuccess:YES andMessage:@"Room were successfuly updated."];
-            ChatRooms *nRoom = [result objectAtIndex:0];
-            NSInteger len= MIN(500, nRoom.messages.count);
-            NSRange range = NSMakeRange(nRoom.messages.count - len, len);
-            room.messages = [NSMutableArray arrayWithArray:[nRoom.messages subarrayWithRange:range]];
+            PFObject *nRoom = [objects objectAtIndex:0];
+            NSMutableArray* messages = [[NSMutableArray alloc] init];
+            
+            for (PFObject*msg in nRoom[roomMessagesFieldName]) {
+                ChatMessage *message = [[ChatMessage alloc] initFromDictionarishObject:msg];
+                [messages addObject:message];
+            }
+            
+            NSInteger len= MIN(500, messages.count);
+            NSRange range = NSMakeRange(messages.count - len, len);
+            room.messages = [NSMutableArray arrayWithArray:[messages subarrayWithRange:range]];
         }
         
         block(r, room);
@@ -150,17 +171,31 @@ TelerikBackendData *instance;
 {
     [room.messages addObject: message];
     
-    EVDataStore *dataStore = [EVDataStore sharedInstance];
-    [dataStore update:room block:^(BOOL success, NSError *error) {
-        Response*r;
+    PFQuery *query = [PFQuery queryWithClassName: roomsTableName];
+    [query whereKey:roomTitleFieldName equalTo:room.title];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
+            Response*r;
             r= [[Response alloc] initWithSuccess:NO andMessage: [error localizedDescription]];
+            block(r);
         }
         else {
-            r = [[Response alloc]initWithSuccess:YES andMessage:@"Message was sent successfuly."];
+            PFObject *room = [objects objectAtIndex:0];
+            [room[roomMessagesFieldName] addObject: message];
+            [room saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    Response*r;
+                    r = [[Response alloc]initWithSuccess:YES andMessage:@"Message was sent successfuly."];
+                    block(r);
+                }
+                else {
+                    Response*r;
+                    r= [[Response alloc] initWithSuccess:NO andMessage: [error localizedDescription]];
+                    block(r);
+                }
+            }];
         }
-        
-        block(r);
     }];
 }
 

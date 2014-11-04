@@ -1,6 +1,9 @@
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface ChatMessage : NSObject
+
+-(instancetype) initFromDictionarishObject: (PFObject*) message;
 
 -(instancetype) initWithTitle: (NSString*) title
                       message: (NSString*) message
@@ -14,7 +17,7 @@
 @property (nonatomic, strong) NSString* sender;
 
 @property (nonatomic, strong) UIImage* photo;
-@property (nonatomic, strong) NSObject* geolocation;
+@property (nonatomic, strong) NSString* location;
 
 @property (nonatomic, strong) NSDate* date;
 

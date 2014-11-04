@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
-#import "TelerikBackendData.h"
+#import "ServerData.h"
 
 @interface RegisterViewController : UIViewController
 
-@property (nonatomic, strong) TelerikBackendData* dataRequester;
+@property (nonatomic, strong) ServerData* dataRequester;
 
 -(void) loginUser;
 -(void) registerUser;

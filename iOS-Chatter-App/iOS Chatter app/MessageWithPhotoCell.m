@@ -23,7 +23,7 @@
     self.titleLabel.text = message.title;
     self.messageTextView.text = message.message;
     
-    if (message.geolocation) {
+    if (message.location) {
         // TODO : Display location properly;
         NSString *locationText = [NSString stringWithFormat: @"from: %@", @"Sofia"];
         self.locationLabel.text = locationText;
