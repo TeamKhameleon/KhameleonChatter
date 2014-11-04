@@ -1,7 +1,9 @@
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface GeoLocationHandler : NSObject
 
--(NSObject*) getLocation;
+-(void)getLocationWithBlock:(void(^)(CLLocation*location))block;
+-(void) getLocationString: (CLLocation*) location withBlock: (void(^)(NSString*locationString)) block;
 
 @end

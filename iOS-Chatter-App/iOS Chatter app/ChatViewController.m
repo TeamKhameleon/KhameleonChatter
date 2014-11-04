@@ -3,6 +3,8 @@
 
 @interface ChatViewController () <UITextFieldDelegate, UITextViewDelegate>
 
+@property (strong, nonatomic) NSString* locationString;
+
 @property (weak, nonatomic) IBOutlet UILabel *roomNameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *messageTextInput;
 @property (weak, nonatomic) IBOutlet UITextField *messageTitleTextInput;
@@ -12,6 +14,7 @@
 - (IBAction)onBackButtonClick:(id)sender;
 - (IBAction)onAddPhotoButtonClick:(id)sender;
 - (IBAction)onSendButtonClick:(id)sender;
+- (IBAction) onLocationSwitchChange:(id)sender;
 
 @end
 
@@ -21,12 +24,14 @@
 {
     [super viewDidLoad];
     self.locationHandler = [[GeoLocationHandler alloc] init];
+    self.cameraHandler = [[CameraHandler alloc] init];
     self.dataRequester = [ServerData sharedInstance];
     self.currentMessage = [[ChatMessage alloc] initWithTitle: @""
                                                      message: @""
                                                    andSender: self.username];
     self.messageTitleTextInput.delegate = self;
     self.messageTextInput.delegate = self;
+    [self onLocationSwitchChange: nil];
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
@@ -56,6 +61,20 @@
     [alert show];
 }
 
+- (IBAction) onLocationSwitchChange:(id)sender{
+    if ([self.geolocationSwitch isOn]) {
+        __weak ChatViewController* wSelf = self;
+        [self.locationHandler getLocationWithBlock:^(CLLocation *location) {
+            [wSelf.locationHandler getLocationString:location withBlock:^(NSString *locationString) {
+                wSelf.locationString = locationString;
+            }];
+        }];
+    }
+    else {
+        self.locationString = @"???";
+    }
+}
+
 -(void)requestUpdate
 {
     __weak ChatViewController * weakSelf = self;
@@ -80,9 +99,7 @@
     self.currentMessage.title = self.messageTitleTextInput.text;
     self.currentMessage.message = self.messageTextInput.text;
     
-    if ([self.geolocationSwitch isOn]) {
-        self.currentMessage.location = [self.locationHandler getLocation];
-    }
+    self.currentMessage.location = self.locationString;
     
     __weak ChatViewController * weakSelf = self;
     [self.dataRequester sendMessage:self.currentMessage toRoom:self.room withBlock:^(Response *r) {
@@ -105,7 +122,7 @@
 
 - (IBAction)onAddPhotoButtonClick:(id)sender
 {
-    [self.currentMessage setPhoto: [self.locationHandler getLocation]];
+    [self.currentMessage setPhoto: [self.cameraHandler getPhoto]];
 }
 
 - (IBAction)onSendButtonClick:(id)sender

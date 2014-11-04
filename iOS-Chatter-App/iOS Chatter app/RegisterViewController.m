@@ -1,8 +1,11 @@
 #import "RegisterViewController.h"
 #import "ServerData.h"
 #import "RoomsListViewController.h"
+#import "ConnectionHandler.h"
 
 @interface RegisterViewController () <UITextFieldDelegate>
+
+@property (strong, nonatomic) ConnectionHandler *connectionHandler;
 
 @property (weak, nonatomic) IBOutlet UILabel *connectionStatus;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextInput;
@@ -25,6 +28,10 @@
     self.dataRequester = [ServerData sharedInstance];
     self.emailTextInput.delegate = self;
     self.passwordTextInput.delegate = self;
+    self.connectionHandler = [[ConnectionHandler alloc] init];
+    if (![self.connectionHandler isConnectedToInternet]) {
+        self.connectionStatus.text = @"not connected";
+    }
 }
 
 - (void)didReceiveMemoryWarning
