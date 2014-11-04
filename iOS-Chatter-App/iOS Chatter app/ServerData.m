@@ -76,15 +76,15 @@ ServerData *instance;
     testObject[usersNameFieldName] = name;
     testObject[usersEmailFieldName] = email;
     testObject[usersPasswordFieldName] = password;
-    BOOL success = [testObject save];
-    
-    if (success) {
-        NSString* message = [NSString stringWithFormat:@"User %@ is now registered" , name];
-        block([[Response alloc]initWithSuccess:YES andMessage:message]);
-    }
-    else {
-        block([[Response alloc]initWithSuccess:NO andMessage:@"Could not register user."]);
-    }
+    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSString* message = [NSString stringWithFormat:@"User %@ is now registered" , name];
+            block([[Response alloc]initWithSuccess:YES andMessage:message]);
+        }
+        else {
+            block([[Response alloc]initWithSuccess:NO andMessage:@"Could not register user."]);
+        }
+    }];
 }
 
 -(void) checkIfRoomsAreSame: (RoomList*) oldRooms

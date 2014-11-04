@@ -38,7 +38,7 @@
 }
 
 -(BOOL)inputHasProblems: (NSString*) text {
-    if ([text length] > 4) {
+    if ([text length] < 4) {
         return YES;
     }
     return NO;
@@ -113,20 +113,20 @@
 }
 
 - (IBAction)onEmailValueChanged:(id)sender {
-    if ([self inputHasProblems: self.emailTextInput.text] == YES) {
-        self.emailTextInput.backgroundColor = [UIColor redColor];
+    if ([self inputHasProblems: self.passwordTextInput.text] == YES) {
+        [self.emailTextInput setBackgroundColor:[UIColor redColor]];
     }
     else {
-        self.emailTextInput.backgroundColor = [UIColor clearColor];
+        [self.emailTextInput setBackgroundColor:[UIColor clearColor]];
     }
 }
 
 - (IBAction)onPasswordValueChanged:(id)sender {
     if ([self inputHasProblems: self.passwordTextInput.text] == YES) {
-        self.passwordTextInput.backgroundColor = [UIColor redColor];
+        [self.passwordTextInput setBackgroundColor:[UIColor redColor]];
     }
     else {
-        self.passwordTextInput.backgroundColor = [UIColor clearColor];
+        [self.passwordTextInput setBackgroundColor:[UIColor clearColor]];
     }
 }
 

@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Siko. All rights reserved.
 //
 
-@interface RoomTableViewCell
+#import "RoomTableViewCell.h"
+
+@interface RoomTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UILabel *Title;
 @property (weak, nonatomic) IBOutlet UITextView *Description;
 
 @end
-
-#import "RoomTableViewCell.h"
 
 @implementation RoomTableViewCell
 

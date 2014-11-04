@@ -1,7 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <EverliveSDK/EverliveSDK.h>
-
-@interface ChatRooms : EVObject
+@interface ChatRooms : NSObject
 
 -(instancetype) initWithTitle: (NSString*)title roomDescr:(NSString*)descr andMessages: (NSMutableArray*)messagess;
 -(instancetype) initWithTitle: (NSString*)title andRoomDescr:(NSString*)descr;
