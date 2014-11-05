@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RoomList.h"
 #import "ChatRooms.h"
 
 @interface RoomSelectionTableView : UITableView
 
-@property  (nonatomic, strong) RoomList* rooms;
+@property  (nonatomic, strong) NSArray* rooms;
 @property  (nonatomic, strong) ChatRooms* currentRoom;
 
 @end

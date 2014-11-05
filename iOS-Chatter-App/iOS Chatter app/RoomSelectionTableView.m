@@ -44,15 +44,4 @@
     return cell;
 }
 
-// Override to support rearranging the table view.
--(void)moveRowAtIndexPath:(NSIndexPath *)indexPath
-              toIndexPath:(NSIndexPath *)newIndexPath {
-    [self.rooms moveObjectFromIndex:indexPath.row
-                            toIndex:newIndexPath.row];
-}
-
-- (BOOL)canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
 @end

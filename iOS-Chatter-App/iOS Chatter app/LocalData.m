@@ -3,11 +3,11 @@
 @implementation LocalData
 
 
--(RoomList*) getRooms {
-    return [[RoomList alloc] init];
+-(NSArray*) getRooms {
+    return [[NSArray alloc] init];
 }
 
--(Response*) updateRooms: (RoomList*) rooms {
+-(Response*) updateRooms: (NSArray*) rooms {
     return [[Response alloc] initWithSuccess:YES andMessage:@"faked"];
 }
 

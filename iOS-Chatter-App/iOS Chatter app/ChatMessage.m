@@ -2,12 +2,16 @@
 
 @implementation ChatMessage
 
--(instancetype) initFromDictionarishObject: (PFObject*) message {
+-(instancetype) initFromDictionary: (NSDictionary*) message {
     if (self = [super init]) {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
+        NSDate *date = [dateFormat dateFromString: message[@"date"]];
+        
         self.title = message[@"title"];
         self.message = message[@"message"];
         self.sender = message[@"sender"];
-        self.date = message[@"date"];
+        self.date = date;
         self.photo = message[@"photo"];
         self.location = message[@"location"];
     }
@@ -30,8 +34,22 @@
     self.location = location;
 }
 
--(void) setPhoto: (NSObject*) photo {
-    self.photo = photo;
+- (void) setPhotoWithObject: (UIImage*) photo
+{
+    //Convert an Image to String
+    UIImage *anImage;
+    NSString *imageString = [UIImagePNGRepresentation(anImage) base64EncodedStringWithOptions:0];
+    self.photo = imageString;
 }
+
+- (UIImage*) getPhoto
+{
+    //To retrieve
+    NSData *data = [self.photo dataUsingEncoding:NSUTF8StringEncoding];
+    UIImage *recoverImage = [UIImage imageWithData: data];
+    return recoverImage;
+}
+
+
 
 @end

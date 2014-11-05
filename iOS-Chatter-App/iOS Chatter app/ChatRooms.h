@@ -1,11 +1,16 @@
 #import <Foundation/Foundation.h>
-@interface ChatRooms : NSObject
+#import <Parse/Parse.h>
 
--(instancetype) initWithTitle: (NSString*)title roomDescr:(NSString*)descr andMessages: (NSMutableArray*)messagess;
+@interface ChatRooms : PFObject<PFSubclassing>
+
+-(instancetype) initWithTitle: (NSString*)title roomDescr:(NSString*)descr andMessages: (NSString*)messagess;
 -(instancetype) initWithTitle: (NSString*)title andRoomDescr:(NSString*)descr;
 
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSString* roomDescription;
-@property (nonatomic, strong) NSMutableArray* messages;
+@property (nonatomic, strong) NSString* messages;
+
+-(NSMutableArray*) getMessages;
+-(void) setMessagesWithArray: (NSMutableArray*) messages;
 
 @end

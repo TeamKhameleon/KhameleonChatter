@@ -152,7 +152,7 @@
         <!--Rooms List View Controller-->
         <scene sceneID="AAE-NG-Tuu">
             <objects>
-                <viewController id="27S-vV-Ceq" customClass="RoomsListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RoomsList" id="27S-vV-Ceq" customClass="RoomsListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="egl-o7-ZdV"/>
                         <viewControllerLayoutGuide type="bottom" id="xBy-K5-tCi"/>
@@ -227,7 +227,7 @@
         <!--Chat View Controller-->
         <scene sceneID="2FG-pF-Luj">
             <objects>
-                <viewController id="z9p-5w-myA" customClass="ChatViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Chat" id="z9p-5w-myA" customClass="ChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eRG-3E-DJp"/>
                         <viewControllerLayoutGuide type="bottom" id="EQH-Qq-7ff"/>

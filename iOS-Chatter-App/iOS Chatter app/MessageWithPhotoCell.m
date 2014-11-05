@@ -33,7 +33,7 @@
     }
     
     if (message.photo) {
-        [self.imageView setImage: message.photo];
+        [self.imageView setImage: [message getPhoto]];
     }
 }
 

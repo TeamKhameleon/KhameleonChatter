@@ -2,4 +2,8 @@
 
 @implementation CameraHandler
 
+-(UIImage *)getPhoto {
+    return nil;
+}
+
 @end

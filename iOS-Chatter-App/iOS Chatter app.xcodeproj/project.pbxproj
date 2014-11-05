@@ -13,7 +13,6 @@
 		A48ACBF119FFA5C000E1D629 /* GeoLocationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF019FFA5C000E1D629 /* GeoLocationHandler.m */; };
 		A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF419FFA60D00E1D629 /* ChatMessage.m */; };
 		A48ACBF819FFB6B200E1D629 /* ChatRooms.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBF719FFB6B200E1D629 /* ChatRooms.m */; };
-		A48ACBFB19FFB81600E1D629 /* RoomList.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBFA19FFB81600E1D629 /* RoomList.m */; };
 		A48ACBFE19FFB9A900E1D629 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBFD19FFB9A900E1D629 /* Response.m */; };
 		A48ACC0119FFBC6900E1D629 /* LocalData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACC0019FFBC6900E1D629 /* LocalData.m */; };
 		A48ACC0419FFBFB800E1D629 /* ConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACC0319FFBFB800E1D629 /* ConnectionHandler.m */; };
@@ -75,8 +74,6 @@
 		A48ACBF419FFA60D00E1D629 /* ChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessage.m; sourceTree = "<group>"; };
 		A48ACBF619FFB6B200E1D629 /* ChatRooms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRooms.h; sourceTree = "<group>"; };
 		A48ACBF719FFB6B200E1D629 /* ChatRooms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRooms.m; sourceTree = "<group>"; };
-		A48ACBF919FFB81600E1D629 /* RoomList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomList.h; sourceTree = "<group>"; };
-		A48ACBFA19FFB81600E1D629 /* RoomList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomList.m; sourceTree = "<group>"; };
 		A48ACBFC19FFB9A900E1D629 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
 		A48ACBFD19FFB9A900E1D629 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
 		A48ACBFF19FFBC6900E1D629 /* LocalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalData.h; sourceTree = "<group>"; };
@@ -198,8 +195,6 @@
 				A48ACBF419FFA60D00E1D629 /* ChatMessage.m */,
 				A48ACBF619FFB6B200E1D629 /* ChatRooms.h */,
 				A48ACBF719FFB6B200E1D629 /* ChatRooms.m */,
-				A48ACBF919FFB81600E1D629 /* RoomList.h */,
-				A48ACBFA19FFB81600E1D629 /* RoomList.m */,
 				A48ACBFC19FFB9A900E1D629 /* Response.h */,
 				A48ACBFD19FFB9A900E1D629 /* Response.m */,
 			);
@@ -373,7 +368,7 @@
 		A4EB4BB119FE7B6700F26507 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Siko;
 				TargetAttributes = {
 					A4EB4BD919FE7B6800F26507 = {
@@ -436,7 +431,6 @@
 				EB4900A21A0682E2004A5838 /* MessageWithPhotoCell.m in Sources */,
 				A4EB4BD319FE7B6800F26507 /* RegisterViewController.m in Sources */,
 				A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */,
-				A48ACBFB19FFB81600E1D629 /* RoomList.m in Sources */,
 				A48ACBFE19FFB9A900E1D629 /* Response.m in Sources */,
 				A48ACBEB19FFA44E00E1D629 /* ServerData.m in Sources */,
 				A4EB4BCD19FE7B6800F26507 /* AppDelegate.m in Sources */,
@@ -501,7 +495,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -540,7 +533,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -606,7 +598,6 @@
 		A4EB4BEF19FE7B6800F26507 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iOS Chatter app.app/iOS Chatter app";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -629,7 +620,6 @@
 		A4EB4BF019FE7B6800F26507 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iOS Chatter app.app/iOS Chatter app";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

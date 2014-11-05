@@ -90,7 +90,7 @@
 
 -(void)onUpdateRecieved: (ChatRooms*) updatedRoom {
     self.room = updatedRoom;
-    self.messagesTable.messages = self.room.messages;
+    self.messagesTable.messages = [self.room getMessages];
     [self.messagesTable reloadData];
 }
 
@@ -122,7 +122,7 @@
 
 - (IBAction)onAddPhotoButtonClick:(id)sender
 {
-    [self.currentMessage setPhoto: [self.cameraHandler getPhoto]];
+    [self.currentMessage setPhotoWithObject: [self.cameraHandler getPhoto]];
 }
 
 - (IBAction)onSendButtonClick:(id)sender

@@ -103,7 +103,8 @@
 }
 
 -(void)goToTheRoomsList {
-    RoomsListViewController *viewController = [[RoomsListViewController alloc] init];
+    
+    RoomsListViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RoomsList"];
     [self presentViewController:viewController animated:YES completion:nil];
 }
 

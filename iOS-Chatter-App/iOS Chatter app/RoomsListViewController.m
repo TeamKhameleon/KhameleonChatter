@@ -43,7 +43,7 @@
 
 -(void) requestUpdate {
     __weak RoomsListViewController* weakself = self;
-    [self.dataRequester getRoomsWithBlock:^(Response *r, RoomList *rooms) {
+    [self.dataRequester getRoomsWithBlock:^(Response *r, NSArray *rooms) {
         if (r.success) {
             [weakself onUpdateRecieved:rooms];
         }
@@ -53,9 +53,9 @@
     }];
 }
 
--(void) onUpdateRecieved: (RoomList*) rooms {
+-(void) onUpdateRecieved: (NSArray*) rooms {
     BOOL roomsAreSame = YES;
-    if (rooms.count != self.rooms.count) {
+    if ([rooms count] != [self.rooms count]) {
         roomsAreSame = NO;
     }
     else
@@ -85,9 +85,10 @@
 -(void) enterRoom {
     NSIndexPath *selectedIP = [self.roomsTable indexPathForSelectedRow];
     ChatRooms *selectedRoom = self.rooms[selectedIP.row];
-
     
-    ChatViewController *viewController = [[ChatViewController alloc] init];
+    ChatViewController *viewController;
+    viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Chat"];
+    //viewController = [[ChatViewController alloc] init];
     viewController.room = selectedRoom;
     [self presentViewController:viewController animated:YES completion:nil];
 }

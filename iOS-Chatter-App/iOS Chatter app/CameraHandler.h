@@ -2,6 +2,6 @@
 
 @interface CameraHandler : NSObject
 
--(NSObject*) getPhoto;
+-(UIImage*) getPhoto;
 
 @end

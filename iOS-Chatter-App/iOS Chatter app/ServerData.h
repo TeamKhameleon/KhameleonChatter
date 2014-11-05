@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "ChatMessage.h"
 #import "Response.h"
-#import "RoomList.h"
 #import "ChatRooms.h"
 
 @interface ServerData : NSObject
@@ -18,10 +17,7 @@
          password: (NSString*) password
          andBlock: (void(^)(Response*r)) block;
 
--(void) checkIfRoomsAreSame: (RoomList*) oldRooms
-                   withBlock: (void(^)(Response*r,BOOL roomsAreSame, RoomList*updatedRooms)) block;
-
--(void) getRoomsWithBlock: (void(^)(Response*r, RoomList*rooms)) block;
+-(void) getRoomsWithBlock: (void(^)(Response*r, NSArray*rooms)) block;
 
 -(void)getUpdatedRoom: (ChatRooms*) room
             withBlock: (void(^)(Response*r, ChatRooms*room)) block;
