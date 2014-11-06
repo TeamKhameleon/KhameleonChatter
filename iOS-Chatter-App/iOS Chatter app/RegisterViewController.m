@@ -2,10 +2,12 @@
 #import "ServerData.h"
 #import "RoomsListViewController.h"
 #import "ConnectionHandler.h"
+#import "NotificationInvoker.h"
 
 @interface RegisterViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) ConnectionHandler *connectionHandler;
+@property (strong, nonatomic) NotificationInvoker *notificationInvoker;
 
 @property (weak, nonatomic) IBOutlet UILabel *connectionStatus;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextInput;
@@ -32,6 +34,10 @@
     if (![self.connectionHandler isConnectedToInternet]) {
         self.connectionStatus.text = @"not connected";
     }
+    self.notificationInvoker = [[NotificationInvoker alloc] init];
+    
+//    [self.notificationInvoker invokeNotificationWithMessage:@"TestMessage"
+//                                    AndAppearDate:[NSDate dateWithTimeIntervalSinceNow:10]];
 }
 
 - (void)didReceiveMemoryWarning
