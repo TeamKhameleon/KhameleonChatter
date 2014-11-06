@@ -183,10 +183,6 @@
                                     <segue destination="Wf7-es-dsN" kind="unwind" unwindAction="returnToLogin:" id="7kX-hX-kUd"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Aac-R9-aJD" customClass="RoomSelectionTableView">
-                                <rect key="frame" x="20" y="73" width="280" height="399"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrc-cs-3jT">
                                 <rect key="frame" x="161" y="480" width="139" height="68"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -197,7 +193,6 @@
                                     <action selector="onEnterRoomButtonClick:" destination="27S-vV-Ceq" eventType="touchUpInside" id="lck-mI-vRo"/>
                                 </connections>
                             </button>
-<<<<<<< HEAD
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Aac-R9-aJD" customClass="RoomSelectionTableView">
                                 <rect key="frame" x="20" y="73" width="280" height="399"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -207,8 +202,6 @@
                                     <outletCollection property="gestureRecognizers" destination="724-Fe-897" appends="YES" id="iPg-4m-ge3"/>
                                 </connections>
                             </tableView>
-=======
->>>>>>> FETCH_HEAD
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -293,6 +286,12 @@
                                     <action selector="onSendButtonClick:" destination="z9p-5w-myA" eventType="touchUpInside" id="rsT-vs-39i"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8k-C0-rSO">
+                                <rect key="frame" x="16" y="467" width="189" height="81"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ss4-DI-gaW">
                                 <rect key="frame" x="13" y="417" width="287" height="47"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -317,7 +316,6 @@
                                     <outletCollection property="gestureRecognizers" destination="A5W-XW-Lrq" appends="YES" id="8OT-7U-wXU"/>
                                 </connections>
                             </tableView>
-<<<<<<< HEAD
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obi-uw-DbE">
                                 <rect key="frame" x="131" y="52" width="51" height="31"/>
                                 <connections>
@@ -337,14 +335,6 @@
                                     <segue destination="Bza-Zf-EjQ" kind="unwind" unwindAction="returnToRooms:" id="kcy-bS-652"/>
                                 </connections>
                             </button>
-=======
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8k-C0-rSO">
-                                <rect key="frame" x="16" y="467" width="189" height="81"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
->>>>>>> FETCH_HEAD
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
