@@ -180,7 +180,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onLogoutButtonClick:" destination="27S-vV-Ceq" eventType="touchUpInside" id="ngR-bF-TrW"/>
+                                    <segue destination="Wf7-es-dsN" kind="unwind" unwindAction="returnToLogin:" id="7kX-hX-kUd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrc-cs-3jT">
@@ -196,6 +196,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Aac-R9-aJD" customClass="RoomSelectionTableView">
                                 <rect key="frame" x="20" y="73" width="280" height="399"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sIc-6o-Jd4" appends="YES" id="fBh-Nt-u13"/>
+                                    <outletCollection property="gestureRecognizers" destination="724-Fe-897" appends="YES" id="iPg-4m-ge3"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -221,6 +226,17 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aml-rJ-YcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Wf7-es-dsN" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="sIc-6o-Jd4">
+                    <connections>
+                        <action selector="onTap:" destination="27S-vV-Ceq" id="xvE-PI-PgH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="724-Fe-897">
+                    <connections>
+                        <action selector="onHold:" destination="27S-vV-Ceq" id="MGW-lR-R83"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="668" y="128"/>
         </scene>
@@ -232,7 +248,7 @@
                         <viewControllerLayoutGuide type="top" id="eRG-3E-DJp"/>
                         <viewControllerLayoutGuide type="bottom" id="EQH-Qq-7ff"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ueh-4h-ZGP">
+                    <view key="view" tag="1001" contentMode="scaleToFill" restorationIdentifier="ChatRoomView" id="Ueh-4h-ZGP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -244,19 +260,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-Gv-ate">
-                                <rect key="frame" x="20" y="20" width="59" height="63"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="59" id="dWs-q6-g5Q"/>
-                                </constraints>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onBackButtonClick:" destination="z9p-5w-myA" eventType="touchUpInside" id="WEC-u3-uDs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4C-UT-ZWS">
                                 <rect key="frame" x="213" y="467" width="87" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -298,9 +301,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obi-uw-DbE">
-                                <rect key="frame" x="131" y="52" width="51" height="31"/>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="show location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXM-vX-AA2">
                                 <rect key="frame" x="188" y="57" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -310,9 +310,34 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-Wz-FFo" customClass="ChatRoomTableView">
                                 <rect key="frame" x="16" y="86" width="284" height="328"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="EyY-oI-gIr" appends="YES" id="UUE-RS-Xty"/>
+                                    <outletCollection property="gestureRecognizers" destination="A5W-XW-Lrq" appends="YES" id="8OT-7U-wXU"/>
+                                </connections>
                             </tableView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obi-uw-DbE">
+                                <rect key="frame" x="131" y="52" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onLocationSwitchChange:" destination="z9p-5w-myA" eventType="touchUpInside" id="oDh-VD-mI8"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-Gv-ate">
+                                <rect key="frame" x="20" y="20" width="59" height="63"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="dWs-q6-g5Q"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Bza-Zf-EjQ" kind="unwind" unwindAction="returnToRooms:" id="kcy-bS-652"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nkv-sB-WIb" firstAttribute="leading" secondItem="BTN-Gv-ate" secondAttribute="trailing" constant="8" symbolic="YES" id="Edn-sR-Bsm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nkv-sB-WIb" secondAttribute="trailing" constant="4" id="ErU-h8-Z3q"/>
@@ -342,8 +367,14 @@
                             <constraint firstItem="YXM-vX-AA2" firstAttribute="leading" secondItem="obi-uw-DbE" secondAttribute="trailing" constant="8" symbolic="YES" id="yvQ-gJ-mQH"/>
                             <constraint firstItem="BTN-Gv-ate" firstAttribute="bottom" secondItem="obi-uw-DbE" secondAttribute="bottom" id="zYV-5G-f4r"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="GPR-E0-y1J" appends="YES" id="nCd-2I-HdP"/>
+                            <outletCollection property="gestureRecognizers" destination="KrV-Ap-sic" appends="YES" id="qzH-YM-DNk"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="BTN-Gv-ate" id="MU5-Ox-BPW"/>
+                        <outlet property="edgePanRecogniser" destination="GPR-E0-y1J" id="EQH-os-rjr"/>
                         <outlet property="geolocationSwitch" destination="obi-uw-DbE" id="qVh-N8-jKd"/>
                         <outlet property="messageTextInput" destination="N8k-C0-rSO" id="LSR-bc-wue"/>
                         <outlet property="messageTitleTextInput" destination="ss4-DI-gaW" id="Y4v-Yl-BQA"/>
@@ -352,6 +383,27 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9I-KV-FXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Bza-Zf-EjQ" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="EyY-oI-gIr">
+                    <connections>
+                        <action selector="onTap:" destination="z9p-5w-myA" id="YAv-lV-Qps"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="A5W-XW-Lrq">
+                    <connections>
+                        <action selector="onHold:" destination="z9p-5w-myA" id="E34-7I-erF"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="GPR-E0-y1J">
+                    <connections>
+                        <action selector="onEdgePan:" destination="z9p-5w-myA" id="GW7-Ak-kFd"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="KrV-Ap-sic">
+                    <connections>
+                        <action selector="onPan:" destination="z9p-5w-myA" id="gsO-an-XPg"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1058" y="128"/>
         </scene>

@@ -2,6 +2,12 @@
 
 @implementation ChatMessage
 
++(NSString*)dateToString: (NSDate*)date{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
+    return [dateFormat stringFromDate:date];
+}
+
 -(instancetype) initFromDictionary: (NSDictionary*) message {
     if (self = [super init]) {
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];

@@ -14,32 +14,32 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sPf-Db-wwM" id="eif-OK-Gti">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-TC-YtH">
-                        <rect key="frame" x="23" y="8" width="275" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Frn-23-KQF"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                        <color key="shadowColor" red="0.3151436237373737" green="0.0" blue="0.012663677521427845" alpha="0.95000000000000007" colorSpace="calibratedRGB"/>
-                        <size key="shadowOffset" width="2" height="2"/>
-                    </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing." textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtK-yO-BUY">
-                        <rect key="frame" x="8" y="37" width="304" height="54"/>
+                        <rect key="frame" x="8" y="38" width="304" height="54"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-TC-YtH">
+                        <rect key="frame" x="23" y="9" width="275" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="hMK-QK-WOX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <color key="shadowColor" red="0.83455650252525249" green="0.60591480383262064" blue="0.4845772231451872" alpha="0.95000000000000007" colorSpace="calibratedRGB"/>
+                        <size key="shadowOffset" width="2" height="2"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="4Gv-TC-YtH" firstAttribute="leading" secondItem="eif-OK-Gti" secondAttribute="leadingMargin" constant="15" id="5J6-UI-INj"/>
-                    <constraint firstItem="JtK-yO-BUY" firstAttribute="centerX" secondItem="4Gv-TC-YtH" secondAttribute="centerX" id="7TU-b0-3Zv"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="JtK-yO-BUY" secondAttribute="bottom" constant="-1" id="PMU-qP-cQP"/>
-                    <constraint firstItem="JtK-yO-BUY" firstAttribute="leading" secondItem="eif-OK-Gti" secondAttribute="leadingMargin" id="X6f-6M-iSg"/>
-                    <constraint firstItem="JtK-yO-BUY" firstAttribute="trailing" secondItem="eif-OK-Gti" secondAttribute="trailingMargin" id="cFA-CB-XoO"/>
-                    <constraint firstItem="4Gv-TC-YtH" firstAttribute="top" secondItem="eif-OK-Gti" secondAttribute="topMargin" id="i55-wq-Y2A"/>
-                    <constraint firstItem="JtK-yO-BUY" firstAttribute="top" secondItem="4Gv-TC-YtH" secondAttribute="bottom" constant="8" symbolic="YES" id="wgx-so-NTt"/>
+                    <constraint firstItem="4Gv-TC-YtH" firstAttribute="top" secondItem="eif-OK-Gti" secondAttribute="topMargin" constant="1" id="3kH-UF-fSB"/>
+                    <constraint firstItem="JtK-yO-BUY" firstAttribute="centerX" secondItem="4Gv-TC-YtH" secondAttribute="centerX" id="4mD-Mc-IcS"/>
+                    <constraint firstItem="JtK-yO-BUY" firstAttribute="top" secondItem="4Gv-TC-YtH" secondAttribute="bottom" constant="8" symbolic="YES" id="C9A-MX-LsS"/>
+                    <constraint firstItem="JtK-yO-BUY" firstAttribute="trailing" secondItem="eif-OK-Gti" secondAttribute="trailingMargin" id="H2L-mG-Wc9"/>
+                    <constraint firstItem="4Gv-TC-YtH" firstAttribute="leading" secondItem="eif-OK-Gti" secondAttribute="leadingMargin" constant="15" id="JEh-lk-fZM"/>
+                    <constraint firstItem="JtK-yO-BUY" firstAttribute="leading" secondItem="eif-OK-Gti" secondAttribute="leadingMargin" id="Qi1-c3-eRz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="JtK-yO-BUY" secondAttribute="bottom" constant="-2" id="ULJ-cV-Q1x"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

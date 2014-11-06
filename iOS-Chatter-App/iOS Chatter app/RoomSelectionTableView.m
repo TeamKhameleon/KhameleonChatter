@@ -9,7 +9,7 @@
 #import "RoomTableViewCell.h"
 #import "RoomSelectionTableView.h"
 
-@interface RoomSelectionTableView ()
+@interface RoomSelectionTableView () <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) NSString* cellIdentifyer;
 
@@ -19,29 +19,36 @@
 
 -(void)awakeFromNib {
     [super awakeFromNib];
-    self.cellIdentifyer = @"RoomSelectionTableCell";
+    self.cellIdentifyer = @"RoomSelectionTableViewCell";
     
     UINib* nib = [UINib nibWithNibName: self.cellIdentifyer
                                 bundle: nil];
     [self registerNib: nib
          forCellReuseIdentifier: self.cellIdentifyer];
+    
+    self.delegate = self;
+    self.dataSource = self;
 }
 
--(NSInteger)numberOfSections {
+- (NSInteger)numberOfSections{
     return 1;
 }
 
--(NSInteger)numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.rooms.count;
 }
 
--(UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RoomTableViewCell *cell = [self dequeueReusableCellWithIdentifier: self.cellIdentifyer
                                                          forIndexPath:indexPath];
     ChatRooms *room = self.rooms[indexPath.row];
     [cell setWithTile:room.title
        andDescription:room.roomDescription];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 99.0;
 }
 
 @end

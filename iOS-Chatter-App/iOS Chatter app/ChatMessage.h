@@ -3,6 +3,7 @@
 
 @interface ChatMessage : NSObject
 
++(NSString*)dateToString: (NSDate*)date;
 -(instancetype) initFromDictionary: (NSDictionary*) message;
 
 -(instancetype) initWithTitle: (NSString*) title

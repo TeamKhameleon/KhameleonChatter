@@ -1,10 +1,11 @@
 #import <Foundation/Foundation.h>
-#import <Parse/Parse.h>
 
-@interface ChatRooms : PFObject<PFSubclassing>
+@interface ChatRooms : NSObject
 
 -(instancetype) initWithTitle: (NSString*)title roomDescr:(NSString*)descr andMessages: (NSString*)messagess;
 -(instancetype) initWithTitle: (NSString*)title andRoomDescr:(NSString*)descr;
+
++(NSString *)parseClassName;
 
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSString* roomDescription;

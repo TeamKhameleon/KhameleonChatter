@@ -19,17 +19,16 @@
     dateString = [formatter stringFromDate: message.date];
     
     self.dateLabel.text = dateString;
-    self.usernameLabel.text = message.sender;
-    self.titleLabel.text = message.title;
+    self.usernameLabel.text = [NSString stringWithFormat: @"[%@]:",message.sender];
+    self.titleLabel.text = [NSString stringWithFormat: @"< %@ >",message.title];
     self.messageTextView.text = message.message;
     
     if (message.location) {
-        // TODO : Display location properly;
-        NSString *locationText = [NSString stringWithFormat: @"from: %@", @"Sofia"];
+        NSString *locationText = [NSString stringWithFormat: @"from: %@", message.location];
         self.locationLabel.text = locationText;
     }
     else {
-        self.locationLabel.text = @"hidden location...";
+        self.locationLabel.text = @"";
     }
     
     if (message.photo) {

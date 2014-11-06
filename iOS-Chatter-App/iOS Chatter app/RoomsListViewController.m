@@ -9,9 +9,12 @@
 
 @property (weak, nonatomic) IBOutlet RoomSelectionTableView *roomsTable;
 
-- (IBAction)onLogoutButtonClick:(id)sender;
+@property (strong, nonatomic) NSDate *dateOfLastTap;
+
 - (IBAction)onEnterRoomButtonClick:(id)sender;
 
+- (IBAction)onHold:(UILongPressGestureRecognizer *)sender;
+- (IBAction)onTap:(UITapGestureRecognizer *)sender;
 @end
 
 @implementation RoomsListViewController
@@ -54,27 +57,9 @@
 }
 
 -(void) onUpdateRecieved: (NSArray*) rooms {
-    BOOL roomsAreSame = YES;
-    if ([rooms count] != [self.rooms count]) {
-        roomsAreSame = NO;
-    }
-    else
-    {
-        for (int i = 0; i < rooms.count; i++) {
-            ChatRooms* old = self.rooms[i];
-            ChatRooms* new = rooms[i];
-            if (old.title != new.title) {
-                roomsAreSame = NO;
-                break;
-            }
-        }
-    }
-    
-    if (roomsAreSame == NO) {
-        self.rooms = rooms;
-        [self.localData updateRooms: rooms];
-        [self updateRooms];
-    }
+    self.rooms = rooms;
+    [self.localData updateRooms: rooms];
+    [self updateRooms];
 }
 
 -(void) updateRooms {
@@ -93,13 +78,28 @@
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
-
-- (IBAction) onLogoutButtonClick:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction) onEnterRoomButtonClick:(id)sender {
     [self enterRoom];
+}
+
+-(IBAction)returnToRooms:(UIStoryboardSegue*) segue{
+    NSLog(@"Back to rooms");
+}
+
+
+- (IBAction)onHold:(UILongPressGestureRecognizer *)sender {
+    [self enterRoom];
+}
+
+- (IBAction)onTap:(UITapGestureRecognizer *)sender {
+    NSDate* dateNow = [NSDate date];
+    
+    if(self.dateOfLastTap != nil && [dateNow timeIntervalSinceDate: self.dateOfLastTap] < .3){
+        [self enterRoom];
+    }
+    else {
+        self.dateOfLastTap = dateNow;
+    }
 }
 
 @end

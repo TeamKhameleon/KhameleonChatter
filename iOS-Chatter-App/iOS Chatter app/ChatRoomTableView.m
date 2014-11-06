@@ -10,7 +10,7 @@
 #import "MessageCell.h"
 #import "MessageWithPhotoCell.h"
 
-@interface ChatRoomTableView ()
+@interface ChatRoomTableView ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) NSString* cellIdentifyer;
 @property (nonatomic,strong) NSString* cellWithPhotoIdentifyer;
@@ -21,23 +21,26 @@
 
 -(void)awakeFromNib {
     [super awakeFromNib];
-    self.cellIdentifyer = @"MessageCell";
-    self.cellWithPhotoIdentifyer = @"MessageWithPhotoCell";
+    self.cellIdentifyer = @"MessageTableViewCell";
+    self.cellWithPhotoIdentifyer = @"MessageTableViewCellWithPhoto";
     
     UINib* nib = [UINib nibWithNibName: self.cellIdentifyer
                                 bundle: nil];
     [self registerNib: nib forCellReuseIdentifier: self.cellIdentifyer];
+    
+    self.delegate = self;
+    self.dataSource = self;
 }
 
 -(NSInteger)numberOfSections {
     return 1;
 }
 
--(NSInteger)numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.messages.count;
 }
 
--(UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ChatMessage* message = self.messages[indexPath.row];
     
     if (message.photo) {
@@ -54,8 +57,22 @@
     }
 }
 
-- (BOOL)canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    return NO;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ChatMessage* message = self.messages[indexPath.row];
+    
+    if (message.photo) {
+        return 228.0;
+    }
+    else {
+        return 136.0;
+    }
+}
+
+-(void)scrollToBottom {
+    NSIndexPath * ndxPath= [NSIndexPath indexPathForRow:self.messages.count-1 inSection:0];
+    [self scrollToRowAtIndexPath : ndxPath
+                atScrollPosition : UITableViewScrollPositionTop
+                        animated : YES];
 }
 
 @end

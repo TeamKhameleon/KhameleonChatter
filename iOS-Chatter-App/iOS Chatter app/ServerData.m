@@ -4,8 +4,6 @@
 
 @interface ServerData()
 
-@property (nonatomic, strong) NSString *token;
-
 @end
 
 @implementation ServerData
@@ -20,12 +18,18 @@ NSString* roomTitleFieldName = @"title";
 NSString* roomDescrFieldName = @"roomDescription";
 NSString* roomMessagesFieldName = @"messages";
 
+NSString *username = @"???";
+
 ServerData *instance;
 
 -(instancetype) init
 {
     self = [super init];
     return self;
+}
+
++(NSString *)getUsername {
+    return username;
 }
 
 +(instancetype) sharedInstance {
@@ -56,6 +60,7 @@ ServerData *instance;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if (objects != nil && [objects count] > 0) {
+                username=name;
                 NSString* message = [NSString stringWithFormat:@"User %@ is now logged in" , name];
                 block([[Response alloc]initWithSuccess:YES andMessage:message]);
             }
@@ -89,6 +94,7 @@ ServerData *instance;
             testObject[usersPasswordFieldName] = password;
             [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
+                    username=name;
                     NSString* message = [NSString stringWithFormat:@"User %@ is now registered" , name];
                     block([[Response alloc]initWithSuccess:YES andMessage:message]);
                 }
@@ -113,7 +119,14 @@ ServerData *instance;
         else {
             r = [[Response alloc]initWithSuccess:YES andMessage:@"Rooms were successfuly accuired."];
         }
-        block(r, objects);
+        NSMutableArray *results = [[NSMutableArray alloc] init];
+        for (PFObject*obj in objects) {
+            ChatRooms*room = [[ChatRooms alloc] initWithTitle: [obj valueForKey:roomTitleFieldName]
+                                                    roomDescr: [obj valueForKey:roomDescrFieldName]
+                                                  andMessages: [obj valueForKey:roomMessagesFieldName]];
+            [results addObject: room];
+        }
+        block(r, results);
     }];
 }
 
@@ -128,14 +141,21 @@ ServerData *instance;
         Response*r;
         if (error) {
             r= [[Response alloc] initWithSuccess:NO andMessage: [error localizedDescription]];
+            block(r, room);
         }
         else {
-            r = [[Response alloc]initWithSuccess:YES andMessage:@"Room were successfuly updated."];
-            ChatRooms *nRoom = [objects objectAtIndex:0];
-            [room setMessages: nRoom.messages];
+            if (objects == nil || objects.count < 1) {
+                r = [[Response alloc]initWithSuccess:NO andMessage:@"Room not found."];
+                block(r, room);
+            }
+            else {
+                PFObject *nRoom = [objects objectAtIndex:0];
+                r = [[Response alloc]initWithSuccess:YES andMessage:@"Room were successfuly updated."];
+                [room setMessages: [nRoom valueForKey: roomMessagesFieldName]];
+                block(r, room);
+            }
         }
         
-        block(r, room);
     }];
 }
 
@@ -157,7 +177,7 @@ ServerData *instance;
             block(r);
         }
         else {
-            ChatRooms *foundRoom = [objects objectAtIndex:0];
+            PFObject *foundRoom = [objects objectAtIndex:0];
             foundRoom[roomMessagesFieldName] = room.messages;
             [foundRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {

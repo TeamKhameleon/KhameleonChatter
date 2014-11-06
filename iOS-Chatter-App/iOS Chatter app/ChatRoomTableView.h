@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSMutableArray* messages;
 
+-(void)scrollToBottom;
+
 @end

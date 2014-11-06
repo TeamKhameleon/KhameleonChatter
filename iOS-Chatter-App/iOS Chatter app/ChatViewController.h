@@ -11,7 +11,6 @@
 @property (nonatomic, strong) GeoLocationHandler* locationHandler;
 @property (nonatomic, strong) CameraHandler* cameraHandler;
 @property (nonatomic, strong) ServerData* dataRequester;
-@property (nonatomic, strong) NSString* username;
 
 -(void)requestUpdate;
 -(void)onUpdateRecieved: (ChatRooms*) updatedRoom;

@@ -7,6 +7,7 @@
 
 -(instancetype) init;
 
++(NSString*) getUsername;
 +(instancetype) sharedInstance;
 
 -(void)loginWithMail: (NSString*)email
