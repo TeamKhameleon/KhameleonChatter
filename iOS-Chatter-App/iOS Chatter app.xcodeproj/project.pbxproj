@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4080B21A0BB965004FB3EE /* NotificationInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4080B11A0BB965004FB3EE /* NotificationInvoker.m */; };
 		A48ACBE819FF9C2B00E1D629 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */; };
 		A48ACBEB19FFA44E00E1D629 /* ServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBEA19FFA44E00E1D629 /* ServerData.m */; };
 		A48ACBEE19FFA4BD00E1D629 /* CameraHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBED19FFA4BD00E1D629 /* CameraHandler.m */; };
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A4080B01A0BB965004FB3EE /* NotificationInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationInvoker.h; sourceTree = "<group>"; };
+		3A4080B11A0BB965004FB3EE /* NotificationInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationInvoker.m; sourceTree = "<group>"; };
 		A48ACBE619FF9C2A00E1D629 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		A48ACBE919FFA44E00E1D629 /* ServerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerData.h; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 				A48ACBF019FFA5C000E1D629 /* GeoLocationHandler.m */,
 				A48ACC0219FFBFB800E1D629 /* ConnectionHandler.h */,
 				A48ACC0319FFBFB800E1D629 /* ConnectionHandler.m */,
+				3A4080B01A0BB965004FB3EE /* NotificationInvoker.h */,
+				3A4080B11A0BB965004FB3EE /* NotificationInvoker.m */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				EBEDBD541A0128FA008B2B14 /* RoomsListViewController.m in Sources */,
 				EB4900A21A0682E2004A5838 /* MessageWithPhotoCell.m in Sources */,
 				A4EB4BD319FE7B6800F26507 /* RegisterViewController.m in Sources */,
+				3A4080B21A0BB965004FB3EE /* NotificationInvoker.m in Sources */,
 				A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */,
 				A48ACBFE19FFB9A900E1D629 /* Response.m in Sources */,
 				A48ACBEB19FFA44E00E1D629 /* ServerData.m in Sources */,
