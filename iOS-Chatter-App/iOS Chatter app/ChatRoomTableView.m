@@ -26,7 +26,13 @@
     
     UINib* nib = [UINib nibWithNibName: self.cellIdentifyer
                                 bundle: nil];
+    
     [self registerNib: nib forCellReuseIdentifier: self.cellIdentifyer];
+    
+    UINib* nibPhoto = [UINib nibWithNibName: self.cellWithPhotoIdentifyer
+                                bundle: nil];
+    
+    [self registerNib: nibPhoto forCellReuseIdentifier: self.cellWithPhotoIdentifyer];
     
     self.delegate = self;
     self.dataSource = self;
@@ -44,7 +50,7 @@
     ChatMessage* message = self.messages[indexPath.row];
     
     if (message.photo) {
-        MessageWithPhotoCell* cell = [self dequeueReusableCellWithIdentifier: self.cellIdentifyer
+        MessageWithPhotoCell* cell = [self dequeueReusableCellWithIdentifier: self.cellWithPhotoIdentifyer
                                           forIndexPath:indexPath];
         [cell setWithMessage:message];
         return cell;

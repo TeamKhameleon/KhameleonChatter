@@ -1,4 +1,5 @@
 #import "ChatMessage.h"
+#import "CameraHandler.h"
 
 @implementation ChatMessage
 
@@ -40,20 +41,38 @@
     self.location = location;
 }
 
+
 - (void) setPhotoWithObject: (UIImage*) photo
 {
+    if(!photo) {
+        self.photo = nil;
+        return;
+    }
+    
     //Convert an Image to String
-    UIImage *anImage;
-    NSString *imageString = [UIImagePNGRepresentation(anImage) base64EncodedStringWithOptions:0];
-    self.photo = imageString;
+    //UIImage *anImage;
+    //NSString *imageString = [UIImagePNGRepresentation(photo) base64EncodedStringWithOptions:0];
+    //self.photo = imageString;
+    
+    
+    UIImage *smallImage = [CameraHandler imageWithImage:photo scaledToSize:CGSizeMake(50, 30)];
+    
+    NSData *data = [UIImagePNGRepresentation(smallImage) base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    self.photo = [NSString stringWithUTF8String:[data bytes]];
 }
 
 - (UIImage*) getPhoto
 {
     //To retrieve
-    NSData *data = [self.photo dataUsingEncoding:NSUTF8StringEncoding];
-    UIImage *recoverImage = [UIImage imageWithData: data];
-    return recoverImage;
+    //NSData *data = [self.photo dataUsingEncoding:NSUTF8StringEncoding];
+    //UIImage *recoverImage = [UIImage imageWithData: data];
+    // return recoverImage;
+    
+    
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:self.photo options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    
+    return [UIImage imageWithData:data];
 }
 
 

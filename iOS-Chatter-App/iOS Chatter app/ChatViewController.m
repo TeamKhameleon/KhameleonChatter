@@ -1,10 +1,11 @@
 #import "ChatViewController.h"
 #import "ChatRoomTableView.h"
 
-@interface ChatViewController () <UITextFieldDelegate, UITextViewDelegate>
+@interface ChatViewController () <UITextFieldDelegate, UITextViewDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) NSString* locationString;
 @property (strong, nonatomic) NSDate* dateOfLastTap;
+@property (strong, nonatomic) UIImage* uploadImage;
 @property BOOL refresh;
 
 @property (weak, nonatomic) IBOutlet UILabel *roomNameLabel;
@@ -42,7 +43,12 @@ NSInteger centerY = 0;
     self.roomNameLabel.text = self.room.title;
     
     self.locationHandler = [[GeoLocationHandler alloc] init];
-    self.cameraHandler = [[CameraHandler alloc] init];
+    
+    
+    
+//    self.cameraHandler = [[CameraHandler alloc] initWithView:self
+//                                                       image:self.uploadImage];
+    
     self.dataRequester = [ServerData sharedInstance];
     self.currentMessage = [[ChatMessage alloc] initWithTitle: @""
                                                      message: @""
@@ -144,12 +150,76 @@ NSInteger centerY = 0;
 
 - (IBAction)onAddPhotoButtonClick:(id)sender
 {
-    [self.currentMessage setPhotoWithObject: [self.cameraHandler getPhoto]];
+    //[self.cameraHandler getPhoto];
+    //[self.currentMessage setPhotoWithObject: [self.cameraHandler getPhoto]];
+    
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Upload picture"
+                                                      message:@"Choose method:"
+                                                     delegate:self
+                                            cancelButtonTitle:nil
+                                            otherButtonTitles:@"Take photo", @"Select photo", nil];
+    [message show];
 }
+//----------------
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
+    if([title isEqualToString:@"Take photo"])
+    {
+        [self takePhoto];
+    }
+    else if([title isEqualToString:@"Select photo"])
+    {
+        [self selectPhoto];
+    }
+}
+-(void) selectPhoto{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+- (void)takePhoto{
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                              message:@"Device has no camera"
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        return;
+    }
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    self.uploadImage = info[UIImagePickerControllerEditedImage];
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+//----------------END-----
 
 - (IBAction)onSendButtonClick:(id)sender
 {
+    [self.currentMessage setPhotoWithObject: self.uploadImage];
     [self sendMessage];
+    self.uploadImage = nil;
 }
 
 - (void) scrowToBottomOfChat {
