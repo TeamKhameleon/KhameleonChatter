@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/RegisterViewController.m"
-            timestampString = "436539677.80105"
+            timestampString = "437050233.697409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "-loginUser"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/RoomsListViewController.m"
-            timestampString = "436632270.182829"
+            timestampString = "437044453.151512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8"
-            endingLineNumber = "8"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
             landmarkName = "@interface RoomsListViewController()"
             landmarkType = "2">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/RoomsListViewController.m"
-            timestampString = "436976117.93098"
+            timestampString = "437050233.697409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "-requestUpdate"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/RoomsListViewController.m"
-            timestampString = "436976117.93098"
+            timestampString = "437050233.697409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "-requestUpdate"
             landmarkType = "5">
             <Locations>
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/RoomsListViewController.m"
-            timestampString = "436976117.93098"
+            timestampString = "437050233.697409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "-onUpdateRecieved:"
             landmarkType = "5">
          </BreakpointContent>
@@ -216,11 +216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/RoomSelectionTableView.m"
-            timestampString = "436960264.512138"
+            timestampString = "437052843.938405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -232,11 +232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/RoomsListViewController.m"
-            timestampString = "436976117.93098"
+            timestampString = "437050233.697409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-updateRooms"
             landmarkType = "5">
          </BreakpointContent>
@@ -248,11 +248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/RoomsListViewController.m"
-            timestampString = "436976117.93098"
+            timestampString = "437050233.697409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "-onUpdateRecieved:"
             landmarkType = "5">
          </BreakpointContent>
@@ -264,11 +264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/RoomSelectionTableView.m"
-            timestampString = "436960264.512138"
+            timestampString = "437052843.938405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -280,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/RoomSelectionTableView.m"
-            timestampString = "436960023.934913"
+            timestampString = "437052843.938405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "-numberOfSections"
             landmarkType = "5">
          </BreakpointContent>
@@ -363,7 +363,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
             endingLineNumber = "109"
-            landmarkName = "-onUpdateRecieved:"
+            landmarkName = "-requestUpdate"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -379,7 +379,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
             endingLineNumber = "110"
-            landmarkName = "-onUpdateRecieved:"
+            landmarkName = "-requestUpdate"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -473,7 +473,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
-            landmarkName = "-onPan:"
+            landmarkName = "-onEdgePan:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -489,7 +489,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
             endingLineNumber = "164"
-            landmarkName = "-onEdgePan:"
+            landmarkName = "-onTap:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -505,7 +505,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
             endingLineNumber = "165"
-            landmarkName = "-onEdgePan:"
+            landmarkName = "-onTap:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -521,7 +521,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
             endingLineNumber = "79"
-            landmarkName = "-onLocationSwitchChange:"
+            landmarkName = "-alert:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -544,7 +544,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/ChatViewController.m"
@@ -560,7 +560,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/ChatViewController.m"
@@ -571,36 +571,6 @@
             endingLineNumber = "83"
             landmarkName = "-onLocationSwitchChange:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[ChatViewController onLocationSwitchChange:]_block_invoke"
-                  moduleName = "iOS Chatter app"
-                  urlString = "file:///Users/Siko91/KhameleonChatter/iOS-Chatter-App/iOS%20Chatter%20app/ChatViewController.m"
-                  timestampString = "436976919.620495"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[ChatViewController onLocationSwitchChange:]_block_invoke_2"
-                  moduleName = "iOS Chatter app"
-                  urlString = "file:///Users/Siko91/KhameleonChatter/iOS-Chatter-App/iOS%20Chatter%20app/ChatViewController.m"
-                  timestampString = "436976919.620785"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -622,7 +592,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS Chatter app/GeoLocationHandler.m"
@@ -632,6 +602,54 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "-locationManager:didUpdateLocations:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS Chatter app/RoomSelectionTableView.m"
+            timestampString = "437052843.938405"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-selectCell:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS Chatter app/RoomSelectionTableView.m"
+            timestampString = "437052843.938405"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-selectCell:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS Chatter app/RoomSelectionTableView.m"
+            timestampString = "437052843.938405"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -3,6 +3,7 @@
 #import "RoomsListViewController.h"
 #import "ConnectionHandler.h"
 #import "NotificationInvoker.h"
+#import "ViewTransitor.h"
 
 @interface RegisterViewController () <UITextFieldDelegate>
 
@@ -111,7 +112,10 @@
 -(void)goToTheRoomsList {
     
     RoomsListViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RoomsList"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    
+//    __weak UIViewController *wViewContr = viewController;
+    [self presentViewController:viewController animated:YES completion:^{
+    }];
 }
 
 - (IBAction)onQuitButtonClick:(id)sender {
@@ -147,4 +151,5 @@
 -(IBAction)returnToLogin:(UIStoryboardSegue*) segue{
     NSLog(@"Back to login");
 }
+
 @end

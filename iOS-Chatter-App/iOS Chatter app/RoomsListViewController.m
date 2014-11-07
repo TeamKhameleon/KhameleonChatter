@@ -4,6 +4,7 @@
 #import "ChatRooms.h"
 #import "RoomSelectionTableView.h"
 #import "ChatViewController.h"
+#import "ViewTransitor.h"
 
 @interface RoomsListViewController ()
 
@@ -75,7 +76,11 @@
     viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Chat"];
     //viewController = [[ChatViewController alloc] init];
     viewController.room = selectedRoom;
-    [self presentViewController:viewController animated:YES completion:nil];
+    
+//    __weak UIViewController *wViewContr = viewController;
+    [self presentViewController:viewController animated:YES completion:^{
+    }];
+    
 }
 
 - (IBAction) onEnterRoomButtonClick:(id)sender {
