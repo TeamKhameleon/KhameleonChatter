@@ -5,6 +5,7 @@
 #import "RoomSelectionTableView.h"
 #import "ChatViewController.h"
 #import "ViewTransitor.h"
+#import "NotificationInvoker.h"
 
 @interface RoomsListViewController ()
 
@@ -28,6 +29,12 @@
     self.rooms = [self.localData getRooms];
     [self updateRooms];
     [self requestUpdate];
+    
+    
+    NotificationInvoker* notificationInvoker = [[NotificationInvoker alloc] init];
+    
+    [notificationInvoker invokeNotificationWithMessage:@"You succesfully logged in!"
+                                         AndAppearDate:[NSDate dateWithTimeIntervalSinceNow:5]];
 }
 
 - (void) didReceiveMemoryWarning
