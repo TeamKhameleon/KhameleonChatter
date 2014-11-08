@@ -5,6 +5,9 @@
 #import "NotificationInvoker.h"
 #import "ViewTransitor.h"
 
+#import "LocalData.h"
+#import "CoreDataChatRoom.h"
+
 @interface RegisterViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) ConnectionHandler *connectionHandler;
@@ -39,6 +42,19 @@
     
 //    [self.notificationInvoker invokeNotificationWithMessage:@"TestMessage"
 //                                    AndAppearDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+
+//----test coredata content-------------
+
+//    LocalData* ld = [[LocalData alloc] init];
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"CoreDataChatRoom"];
+//    NSSortDescriptor *sort =
+//    [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+//    [request setSortDescriptors:[NSArray arrayWithObject:sort]];
+//    NSArray *fetchedObjects = [ld.context executeFetchRequest:request error:nil];
+//    for (CoreDataChatRoom *cr in fetchedObjects) {
+//        NSLog(@"Fetched Object = %@", cr.title);
+//    }
+//---------------------------------------
 }
 
 - (void)didReceiveMemoryWarning

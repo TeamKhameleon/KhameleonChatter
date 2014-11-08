@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3A4080B21A0BB965004FB3EE /* NotificationInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4080B11A0BB965004FB3EE /* NotificationInvoker.m */; };
+		3AB435BD1A0E5408000F0BD8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB435BC1A0E5408000F0BD8 /* CoreData.framework */; };
+		3AB435C01A0E57E4000F0BD8 /* CoreDataEntities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AB435BE1A0E57E4000F0BD8 /* CoreDataEntities.xcdatamodeld */; };
+		3AB435C31A0E6324000F0BD8 /* CoreDataChatRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB435C21A0E6324000F0BD8 /* CoreDataChatRoom.m */; };
 		A48ACBE819FF9C2B00E1D629 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */; };
 		A48ACBEB19FFA44E00E1D629 /* ServerData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBEA19FFA44E00E1D629 /* ServerData.m */; };
 		A48ACBEE19FFA4BD00E1D629 /* CameraHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A48ACBED19FFA4BD00E1D629 /* CameraHandler.m */; };
@@ -65,6 +68,10 @@
 /* Begin PBXFileReference section */
 		3A4080B01A0BB965004FB3EE /* NotificationInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationInvoker.h; sourceTree = "<group>"; };
 		3A4080B11A0BB965004FB3EE /* NotificationInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationInvoker.m; sourceTree = "<group>"; };
+		3AB435BC1A0E5408000F0BD8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3AB435BF1A0E57E4000F0BD8 /* CoreDataEntities.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataEntities.xcdatamodel; sourceTree = "<group>"; };
+		3AB435C11A0E6324000F0BD8 /* CoreDataChatRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataChatRoom.h; sourceTree = "<group>"; };
+		3AB435C21A0E6324000F0BD8 /* CoreDataChatRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataChatRoom.m; sourceTree = "<group>"; };
 		A48ACBE619FF9C2A00E1D629 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		A48ACBE719FF9C2B00E1D629 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		A48ACBE919FFA44E00E1D629 /* ServerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerData.h; sourceTree = "<group>"; };
@@ -134,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB435BD1A0E5408000F0BD8 /* CoreData.framework in Frameworks */,
 				EB6766951A08E356004199F2 /* libz.dylib in Frameworks */,
 				EB6766931A08E327004199F2 /* SystemConfiguration.framework in Frameworks */,
 				EB6766911A08E31A004199F2 /* StoreKit.framework in Frameworks */,
@@ -202,6 +210,9 @@
 				A48ACBF719FFB6B200E1D629 /* ChatRooms.m */,
 				A48ACBFC19FFB9A900E1D629 /* Response.h */,
 				A48ACBFD19FFB9A900E1D629 /* Response.m */,
+				3AB435BE1A0E57E4000F0BD8 /* CoreDataEntities.xcdatamodeld */,
+				3AB435C11A0E6324000F0BD8 /* CoreDataChatRoom.h */,
+				3AB435C21A0E6324000F0BD8 /* CoreDataChatRoom.m */,
 			);
 			name = Types;
 			sourceTree = "<group>";
@@ -228,6 +239,7 @@
 		A4EB4BBB19FE7B6800F26507 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AB435BC1A0E5408000F0BD8 /* CoreData.framework */,
 				EB6766941A08E356004199F2 /* libz.dylib */,
 				EB6766921A08E327004199F2 /* SystemConfiguration.framework */,
 				EB6766901A08E31A004199F2 /* StoreKit.framework */,
@@ -430,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A48ACC0419FFBFB800E1D629 /* ConnectionHandler.m in Sources */,
+				3AB435C01A0E57E4000F0BD8 /* CoreDataEntities.xcdatamodeld in Sources */,
 				A48ACBEE19FFA4BD00E1D629 /* CameraHandler.m in Sources */,
 				A48ACBF119FFA5C000E1D629 /* GeoLocationHandler.m in Sources */,
 				EBEDBD541A0128FA008B2B14 /* RoomsListViewController.m in Sources */,
@@ -438,6 +451,7 @@
 				3A4080B21A0BB965004FB3EE /* NotificationInvoker.m in Sources */,
 				A48ACBF519FFA60D00E1D629 /* ChatMessage.m in Sources */,
 				A48ACBFE19FFB9A900E1D629 /* Response.m in Sources */,
+				3AB435C31A0E6324000F0BD8 /* CoreDataChatRoom.m in Sources */,
 				A48ACBEB19FFA44E00E1D629 /* ServerData.m in Sources */,
 				A4EB4BCD19FE7B6800F26507 /* AppDelegate.m in Sources */,
 				A48ACBE819FF9C2B00E1D629 /* ChatViewController.m in Sources */,
@@ -672,6 +686,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3AB435BE1A0E57E4000F0BD8 /* CoreDataEntities.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3AB435BF1A0E57E4000F0BD8 /* CoreDataEntities.xcdatamodel */,
+			);
+			currentVersion = 3AB435BF1A0E57E4000F0BD8 /* CoreDataEntities.xcdatamodel */;
+			path = CoreDataEntities.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A4EB4BB119FE7B6700F26507 /* Project object */;
 }
